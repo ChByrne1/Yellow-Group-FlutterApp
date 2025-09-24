@@ -87,3 +87,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+fonts:
+  - family: Merriweather
+    fonts:
+      - asset: fonts/static/Merriweather_24pt-Bold.ttf
+      - asset: fonts/static/Merriweather_24pt-SemiBold.ttf
+        weight: 200
