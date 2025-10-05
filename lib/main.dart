@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'theme.dart';
+
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 import 'package:go_router/go_router.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +16,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp(
+
       title: 'YellowGroup',
       theme: ThemeData(
         primaryColor: Colors.yellow[600],
@@ -22,6 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
+
     );
   }
 }
@@ -43,6 +50,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         backgroundColor: Theme.of(context).primaryColor,
         leading: Icon(Icons.menu, color: Colors.white),
         title: Text(
@@ -68,6 +76,7 @@ class _HomePageState extends State<HomePage> {
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
+
         ),
       ),
       child: Row(
