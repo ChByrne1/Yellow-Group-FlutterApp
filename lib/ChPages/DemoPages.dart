@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:yellow_group_flutterapp/theme.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,11 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Center(
       child: Text(
         "HomeScreen",
-        style: TextStyle(
-          color: Colors.green[900],
-          fontSize: 45,
-          fontWeight: FontWeight.w500,
-        ),
+        style: Theme.of(context).textTheme.headlineLarge,
       ),
     );
   }
@@ -26,11 +24,7 @@ class Page1 extends StatelessWidget {
     return Center(
       child: Text(
         "Page Number 1",
-        style: TextStyle(
-          color: Colors.green[900],
-          fontSize: 45,
-          fontWeight: FontWeight.w500,
-        ),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }
@@ -44,11 +38,7 @@ class Page2 extends StatelessWidget {
     return Center(
       child: Text(
         "Page Number 2",
-        style: TextStyle(
-          color: Colors.green[900],
-          fontSize: 45,
-          fontWeight: FontWeight.w500,
-        ),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }

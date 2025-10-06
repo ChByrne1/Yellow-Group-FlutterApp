@@ -18,14 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp(
-
       title: 'YellowGroup',
-      theme: ThemeData(
-        primaryColor: Colors.yellow[600],
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-      ),
+      theme: pageSetup,
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
 
@@ -55,11 +49,7 @@ class _HomePageState extends State<HomePage> {
         leading: Icon(Icons.menu, color: Colors.white),
         title: Text(
           "YellowGroup",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         centerTitle: true,
       ),
