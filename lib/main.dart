@@ -49,11 +49,7 @@ class _HomePageState extends State<HomePage> {
         leading: Icon(Icons.menu, color: Colors.white),
         title: Text(
           "YellowGroup",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         centerTitle: true,
       ),
