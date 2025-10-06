@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'bulletinBoard.dart';
+import 'library.dart';
 import 'theme.dart';
-
+import 'navigation/bottomNav.dart';
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,18 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: routes,
 
       title: 'YellowGroup',
-      theme: ThemeData(
-        primaryColor: Colors.yellow[600],
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const HomePage(),
-
+      theme: pageSetup,
     );
   }
 }
@@ -64,86 +58,27 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: pages[pageIndex],
-      bottomNavigationBar: buildMyNavBar(context),
+      bottomNavigationBar: MyNavBar(),
     );
   }
 
-  Container buildMyNavBar(BuildContext context) {
-    return Container(
-      height: 60,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
 
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 0;
-              });
-            },
-            icon:
-            pageIndex == 0
-                ? const Icon(
-              Icons.home_filled,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.home_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 1;
-              });
-            },
-            icon:
-            pageIndex == 1
-                ? const Icon(
-              Icons.work_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.work_outline_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 2;
-              });
-            },
-            icon:
-            pageIndex == 2
-                ? const Icon(
-              Icons.widgets_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.widgets_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-        ],
-      ),
-    );
   }
-}
+
+
+
+final GoRouter routes =
+    GoRouter(
+        initialLocation: '/',
+        routes: [
+    GoRoute(path: '/',
+      builder: (context, state) =>HomePage()
+    ),
+       GoRoute(path: '/BulletinBoard',
+          builder: (context, state) => BulletinBoardPage()
+       ),
+      GoRoute(path: '/library',
+          builder: (context, state) =>LibraryPage()
+      ),
+]
+    );
