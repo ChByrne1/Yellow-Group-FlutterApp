@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../Theme/theme.dart';
+
 //created once to be pulled into other pages
 
 
-class MyNavBar extends StatelessWidget {
+class YellowBottomNav extends StatelessWidget {
+  const YellowBottomNav({super.key});
+
 
 
   @override
   Widget build(BuildContext context) {
+    final pageSetup = SchoolTheme.pageSetup();
     //https://stackoverflow.com/questions/75195897/how-to-return-the-existing-current-route-from-go-router
     String currentLocation = GoRouterState
         .of(context)
@@ -18,9 +23,7 @@ class MyNavBar extends StatelessWidget {
     return Container(
       height: 60,
       decoration: BoxDecoration(
-        color: Theme
-            .of(context)
-            .primaryColor,
+        color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),

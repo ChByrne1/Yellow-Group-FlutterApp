@@ -1,33 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../librarySets/libraryList.dart';
+import 'package:yellow_group_flutterapp/navigation/drawer.dart';
+import '../../librarySets/overview.dart';
 import '../../models/library.dart';
-import '../librarySets/libraryBar.dart';
-import '../navigation/bottomNav.dart';
+import '../navigation/newAppBar.dart';
+import '../navigation/overView.dart';
 import '../Theme/theme.dart';
 
-
-class LibraryPage extends StatelessWidget
-{
+class LibraryPage extends StatelessWidget {
   const LibraryPage({super.key});
 
   @override
-  Widget build(BuildContext context)
-    {
+  Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
 
     return SafeArea(
       child: Scaffold(
-      body: Column(
+        body: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Center(
-                child: Text('Library',
+                child: Text(
+                  'Library',
                   style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
-              )
-              ),
+            ),
             LibraryBar(),
 
             /*ListView(
@@ -38,14 +37,13 @@ class LibraryPage extends StatelessWidget
                 Container(height: 300, color: Colors.green),
             ]
             ),*/
-
-
-            Expanded (
-                child: LibraryList(books: bookList)
-            ),
-          ]
+            Expanded(child: LibraryList(books: bookList)),
+          ],
+        ),
+        appBar: YellowAppBar(),
+        bottomNavigationBar: YellowBottomNav(),
+        drawer: YellowDrawerNav()
       ),
-        bottomNavigationBar: MyNavBar(),),
     );
   }
 }

@@ -1,0 +1,36 @@
+
+
+class BulletinBoardPage extends StatelessWidget {
+  const BulletinBoardPage({Key? key}) : super(key: key);
+
+  // Example data
+  final List<Map<String, dynamic>> newsItems = const [
+    {
+      'title': 'Library Opens',
+      'date': '2025-10-02',
+      'content': 'Our new library has opened with thousands of new books.',
+    },
+    {
+      'title': 'New Cafeteria Menu',
+      'date': '2025-09-28',
+      'content': 'We’ve updated our lunch menu to include healthier options.',
+    },
+    {
+      'title': 'Sports Day',
+      'date': '2025-10-05',
+      'content': 'Join us for the annual Sports Day this Friday!',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final pageSetup = SchoolTheme.pageSetup();
+    return Container(
+      color: pageSetup.primaryColor,
+      child:
+      SafeArea(
+        child: Scaffold(
+          appBar: yellowAppBar,
+          bottomNavigationBar: MyNavBar(),
+            //body:
+

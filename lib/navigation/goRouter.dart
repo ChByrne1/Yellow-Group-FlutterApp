@@ -12,7 +12,8 @@ GoRouter(
           builder: (context, state) => BulletinBoardPage()
       ),
       GoRoute(path: '/library',
-          builder: (context, state) =>LibraryPage()
+          builder: (context, state) =>LibraryPage(),
+            name: 'Library'
       ),
     ]
 );

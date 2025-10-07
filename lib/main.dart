@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: pages[pageIndex],
-      bottomNavigationBar: MyNavBar(),
+      bottomNavigationBar: YellowBottomNav(),
     );
   }
 

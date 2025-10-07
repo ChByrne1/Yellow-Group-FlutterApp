@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
+import 'package:yellow_group_flutterapp/navigation/appBar.dart';
 
 import '../navigation/bottomNav.dart';
 
@@ -33,12 +34,13 @@ class BulletinBoardPage extends StatelessWidget {
     sortedItems.sort((a, b) => b['date'].compareTo(a['date']));
 
     return Container(
-      color: pageSetup.primaryColor,
+      color: pageSetup.appBarTheme.backgroundColor,
     child:
     SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey[100],
-          bottomNavigationBar: MyNavBar(),
+          bottomNavigationBar: YellowBottomNav(),
+      appBar: YellowAppBar(),
       body: Column(
         children: [
           // Header widget that stays at the top
@@ -60,17 +62,7 @@ class BulletinBoardPage extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
-                    Text(
-                      'West Virginia University at Parkersburg',
-                      style: TextStyle(
 
-                        overflow: TextOverflow.ellipsis,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: 4),
                     Text(
                       '📢 School Bulletin Board',
                       style: TextStyle(
