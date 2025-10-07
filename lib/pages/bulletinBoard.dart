@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yellow_group_flutterapp/theme.dart';
+import 'package:yellow_group_flutterapp/Theme/theme.dart';
 
-import 'navigation/bottomNav.dart';
+import '../navigation/bottomNav.dart';
 
 class BulletinBoardPage extends StatelessWidget {
   const BulletinBoardPage({Key? key}) : super(key: key);
@@ -32,7 +32,10 @@ class BulletinBoardPage extends StatelessWidget {
     List<Map<String, dynamic>> sortedItems = List.from(newsItems);
     sortedItems.sort((a, b) => b['date'].compareTo(a['date']));
 
-    return SafeArea(
+    return Container(
+      color: pageSetup.primaryColor,
+    child:
+    SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey[100],
           bottomNavigationBar: MyNavBar(),
@@ -53,12 +56,15 @@ class BulletinBoardPage extends StatelessWidget {
                 const SizedBox(width: 12),
 
                 // School name and title
-                Column(
+            Flexible(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
                       'West Virginia University at Parkersburg',
                       style: TextStyle(
+
+                        overflow: TextOverflow.ellipsis,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -73,7 +79,8 @@ class BulletinBoardPage extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
+                )
+            ),
               ],
             ),
           ),
@@ -116,6 +123,7 @@ class BulletinBoardPage extends StatelessWidget {
         ],
       ),
         ),
+    ),
     );
   }
 }

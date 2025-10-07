@@ -71,6 +71,9 @@ class SchoolTheme {
         splashColor: secondaryColor,
         focusColor: optionalColor,
       ),
+      drawerTheme: DrawerThemeData(
+        backgroundColor: primaryColor,shadowColor: Colors.black
+      ),
     );
   }
 }

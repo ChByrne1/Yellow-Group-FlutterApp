@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'bulletinBoard.dart';
-import 'library.dart';
-import 'theme.dart';
+import 'navigation/goRouter.dart';
+import 'pages/bulletinBoard.dart';
+import 'pages/library.dart';
+import 'Theme/theme.dart';
 import 'navigation/bottomNav.dart';
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 import 'package:go_router/go_router.dart';
@@ -63,18 +64,3 @@ class _HomePageState extends State<HomePage> {
 
 
 
-final GoRouter routes =
-    GoRouter(
-        initialLocation: '/',
-        routes: [
-    GoRoute(path: '/',
-      builder: (context, state) =>HomePage()
-    ),
-       GoRoute(path: '/BulletinBoard',
-          builder: (context, state) => BulletinBoardPage()
-       ),
-      GoRoute(path: '/library',
-          builder: (context, state) =>LibraryPage()
-      ),
-]
-    );

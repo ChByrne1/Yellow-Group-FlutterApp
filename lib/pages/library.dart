@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../librarySets/libraryList.dart';
-import '../models/library.dart';
-import 'librarySets/libraryBar.dart';
-import 'navigation/bottomNav.dart';
-import 'theme.dart';
+import '../../librarySets/libraryList.dart';
+import '../../models/library.dart';
+import '../librarySets/libraryBar.dart';
+import '../navigation/bottomNav.dart';
+import '../Theme/theme.dart';
 
 
 class LibraryPage extends StatelessWidget
@@ -29,6 +29,16 @@ class LibraryPage extends StatelessWidget
               )
               ),
             LibraryBar(),
+
+            /*ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              children: [LibraryList(books: bookList),
+            Container(height: 300, color: Colors.green),
+                Container(height: 300, color: Colors.green),
+            ]
+            ),*/
+
 
             Expanded (
                 child: LibraryList(books: bookList)
