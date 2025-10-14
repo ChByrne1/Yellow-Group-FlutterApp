@@ -55,28 +55,28 @@ class YellowBottomNav extends StatelessWidget {
             icon:
             currentLocation == '/BulletinBoard'
                 ? const Icon(
-              Icons.work_rounded,
+              Icons.calendar_month,
               color: Colors.white,
               size: 35,
             )
                 : const Icon(
-              Icons.work_outline_outlined,
+              Icons.calendar_month_outlined,
               color: Colors.white,
               size: 35,
             ),
           ),
           IconButton(
             enableFeedback: false,
-            onPressed: () => context.go('/Library'),
+            onPressed: () => context.go('/Sitemap'),
             icon:
-            currentLocation == '/Library'
+            currentLocation == '/Sitemap'
                 ? const Icon(
-              Icons.widgets_rounded,
+              Icons.account_tree,
               color: Colors.white,
               size: 35,
             )
                 : const Icon(
-              Icons.widgets_outlined,
+              Icons.account_tree_outlined,
               color: Colors.white,
               size: 35,
             ),

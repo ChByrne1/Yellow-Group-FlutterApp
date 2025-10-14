@@ -5,8 +5,8 @@ import 'package:yellow_group_flutterapp/navigation/drawer.dart';
 
 import '../navigation/bottomNav.dart';
 
-class Page1 extends StatelessWidget {
-  const Page1({super.key});
+class SiteMap extends StatelessWidget {
+  const SiteMap({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,8 @@ class Page1 extends StatelessWidget {
             child: Scaffold(
                 appBar: YellowAppBar(),
                 bottomNavigationBar: YellowBottomNav(),
-                drawer: YellowDrawerNav()
-                //Everything can be put below here.
-               // body: ,
+                drawer: YellowDrawerNav(),
+
             )
         )
     );

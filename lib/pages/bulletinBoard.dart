@@ -5,7 +5,7 @@ import 'package:yellow_group_flutterapp/navigation/appBar.dart';
 import '../navigation/bottomNav.dart';
 
 class BulletinBoardPage extends StatelessWidget {
-  const BulletinBoardPage({Key? key}) : super(key: key);
+  const BulletinBoardPage({super.key});
 
   // Example data
   final List<Map<String, dynamic>> newsItems = const [

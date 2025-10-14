@@ -5,8 +5,8 @@ import 'package:yellow_group_flutterapp/navigation/drawer.dart';
 
 import '../navigation/bottomNav.dart';
 
-class Page1 extends StatelessWidget {
-  const Page1({super.key});
+class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
 
   @override
   Widget build(BuildContext context) {
