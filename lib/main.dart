@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'navigation/appBar.dart';
+import 'navigation/drawer.dart';
 import 'navigation/goRouter.dart';
-import 'pages/bulletinBoard.dart';
-import 'pages/library.dart';
 import 'Theme/theme.dart';
 import 'navigation/bottomNav.dart';
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
-import 'package:go_router/go_router.dart';
 
 
 void main() {
@@ -13,7 +12,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
 
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -43,19 +42,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    final pageSetup = SchoolTheme.pageSetup();
+    return Container(
+        color: pageSetup.appBarTheme.backgroundColor,
+      child:
+      SafeArea(
+        child: Scaffold(
+            appBar: YellowAppBar(),
+            bottomNavigationBar: YellowBottomNav(),
+            drawer: YellowDrawerNav(),
+            //Everything can be put below here.
 
-        backgroundColor: Theme.of(context).primaryColor,
-        leading: Icon(Icons.menu, color: Colors.white),
-        title: Text(
-          "YellowGroup",
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-        centerTitle: true,
+
       ),
-      body: pages[pageIndex],
-      bottomNavigationBar: YellowBottomNav(),
+    )
     );
   }
 
