@@ -15,13 +15,13 @@ GoRouter(
       GoRoute(path: '/BulletinBoard',
           builder: (context, state) => BulletinBoardPage()
       ),
+          GoRoute(path: '/Sitemap',
+              builder: (context, state) =>SiteMap(),
+              name: 'Sitemap'
+          ),
       GoRoute(path: '/library',
           builder: (context, state) =>LibraryPage(),
             name: 'Library'
-      ),
-        GoRoute(path: '/Sitemap',
-        builder: (context, state) =>SiteMap(),
-        name: 'Sitemap'
       ),
       GoRoute(path: '/Cafeteria',
           builder: (context, state) =>Cafeteria(),
