@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:yellow_group_flutterapp/ChPages/BullatinBoard.dart';
+import 'navigation/appBar.dart';
+import 'navigation/drawer.dart';
+import 'navigation/goRouter.dart';
+import 'Theme/theme.dart';
+import 'navigation/bottomNav.dart';
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
-import 'package:go_router/go_router.dart';
+
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final pageSetup = SchoolTheme.pageSetup();
+    return MaterialApp.router(
+      routerConfig: routes,
+
       title: 'YellowGroup',
-      theme: ThemeData(
-        primaryColor: Colors.yellow[600],
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      theme: pageSetup,
     );
   }
 }
 
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -42,100 +43,25 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        leading: Icon(Icons.menu, color: Colors.white),
-        title: Text(
-          "YellowGroup",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
+    final pageSetup = SchoolTheme.pageSetup();
+    return Container(
+        color: pageSetup.appBarTheme.backgroundColor,
+      child:
+      SafeArea(
+        child: Scaffold(
+            appBar: YellowAppBar(),
+            bottomNavigationBar: YellowBottomNav(),
+            drawer: YellowDrawerNav(),
+            //Everything can be put below here.
+
+
       ),
-      body: pages[pageIndex],
-      bottomNavigationBar: buildMyNavBar(context),
+    )
     );
   }
 
-  Container buildMyNavBar(BuildContext context) {
-    return Container(
-      height: 60,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 0;
-              });
-            },
-            icon:
-            pageIndex == 0
-                ? const Icon(
-              Icons.home_filled,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.home_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 1;
-              });
-            },
-            icon:
-            pageIndex == 1
-                ? const Icon(
-              Icons.work_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.work_outline_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 2;
-              });
-            },
-            icon:
-            pageIndex == 2
-                ? const Icon(
-              Icons.widgets_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.widgets_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-        ],
-      ),
-    );
+
   }
-}
+
+
+
