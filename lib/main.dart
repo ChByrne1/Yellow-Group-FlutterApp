@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yellow_group_flutterapp/ChPages/BullatinBoard.dart';
 import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 import 'package:go_router/go_router.dart';
 
@@ -37,7 +38,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int pageIndex = 0;
 
-  final pages = [const HomeScreen(), Page1(), const Page2()];
+  final pages = [const HomeScreen(), const BulletinBoard(), const Page2()];
 
   @override
   Widget build(BuildContext context) {
