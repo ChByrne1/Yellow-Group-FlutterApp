@@ -48,12 +48,20 @@ class _HomePageState extends State<HomePage> {
       child:
       SafeArea(
         child: Scaffold(
-            appBar: YellowAppBar(),
+            body: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage("images/homePageBackground.jpg"), fit: BoxFit.fitHeight,),
+                  ),
+                ),
+                Center(
+                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
+                )
+              ],
+            ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            //Everything can be put below here.
-
-
       ),
     )
     );
