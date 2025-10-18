@@ -4,7 +4,7 @@ import 'navigation/drawer.dart';
 import 'navigation/goRouter.dart';
 import 'Theme/theme.dart';
 import 'navigation/bottomNav.dart';
-import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
+import 'package:http/http.dart' as http;
 
 
 void main() {
@@ -36,9 +36,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pageIndex = 0;
-
-  final pages = [const HomeScreen(), Page1(), const Page2()];
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +54,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Center(
                   child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
+                ),
+                //this is where the news will go
+                Container(
+                  child: ListView.builder(itemCount: 3,
+                      itemBuilder:  (context, index) {
+
+                      }
+                  ),
                 )
               ],
             ),
