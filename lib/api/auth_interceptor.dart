@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:chopper/chopper.dart';
 
+
 class APIKeyInterceptor implements Interceptor {
   APIKeyInterceptor(this._getAPIKey);
 
