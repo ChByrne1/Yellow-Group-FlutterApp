@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'Theme/theme.dart';
 import 'navigation/overview.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp.router(
-      routerConfig: routes,
+      //routerConfig: routes,
 
       title: 'YellowGroup',
       theme: pageSetup,
@@ -38,11 +37,9 @@ class _HomePageState extends State<HomePage> {
     final pageSetup = SchoolTheme.pageSetup();
     return Container(
         color: pageSetup.appBarTheme.backgroundColor,
-        child:
-        SafeArea(
-          child: Scaffold(
-            //extends the picture behind the bottom nav
-            extendBody: true,
+      child:
+      SafeArea(
+        child: Scaffold(
             body: Stack(
               children: <Widget>[
                 Container(
@@ -65,11 +62,8 @@ class _HomePageState extends State<HomePage> {
             ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            appBar: YellowAppBar(),
-          ),
-        )
+      ),
+    )
     );
   }
-
-
 }
