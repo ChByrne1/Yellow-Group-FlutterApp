@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
-import 'package:yellow_group_flutterapp/navigation/appBar.dart';
-import 'package:yellow_group_flutterapp/navigation/drawer.dart';
+import 'package:yellow_group_flutterapp/navigation/overview.dart';
 
 import '../navigation/bottomNav.dart';
 
