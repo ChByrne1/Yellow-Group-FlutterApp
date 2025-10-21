@@ -1,8 +1,10 @@
 import 'package:go_router/go_router.dart';
+import 'package:yellow_group_flutterapp/ChPages/BullatinBoard.dart';
 import 'package:yellow_group_flutterapp/pages/AboutApp.dart';
 import 'package:yellow_group_flutterapp/pages/AboutUs.dart';
 import 'package:yellow_group_flutterapp/pages/Cafeteria.dart';
 import 'package:yellow_group_flutterapp/pages/SiteMap.dart';
+import 'package:yellow_group_flutterapp/pages/bulletinBoard.dart';
 import '../pages/overView.dart';
 
 final GoRouter routes =
