@@ -6,25 +6,19 @@ import '../Theme/theme.dart';
 //created once to be pulled into other pages
 
 
-class YellowBottomNavs extends StatelessWidget {
-  const YellowBottomNavs({super.key});
+class YellowBottomNav extends StatelessWidget {
+  const YellowBottomNav({super.key});
 
 
 
   @override
   Widget build(BuildContext context) {
+    final pageSetup = SchoolTheme.pageSetup();
     //https://stackoverflow.com/questions/75195897/how-to-return-the-existing-current-route-from-go-router
     String currentLocation = GoRouterState
         .of(context)
         .uri
         .toString();
-
-
-    /*final List<_NavPage> navPages =
-        [
-          _NavPage('/', Icons.home, 'Home'),
-          _NavPage(route, icon, pageLabel)
-        ]*/
 
     return Container(
       height: 60,
@@ -125,11 +119,4 @@ class YellowBottomNavs extends StatelessWidget {
       ),
     );
   }
-}
-
-class _NavPage {
-  final String route;
-  final IconData icon;
-  final String pageLabel;
-  _NavPage( this.route, this.icon, this.pageLabel);
 }

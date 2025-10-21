@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:yellow_group_flutterapp/pages/AboutApp.dart';
 import 'package:yellow_group_flutterapp/pages/AboutUs.dart';
-import 'package:yellow_group_flutterapp/pages/Cafeteria.dart';
+import 'package:yellow_group_flutterapp/pages/cafeteria.dart';
 import 'package:yellow_group_flutterapp/pages/SiteMap.dart';
 import '../pages/overView.dart';
 
@@ -23,7 +23,7 @@ GoRouter(
         builder: (context, state) =>SiteMap(),
         name: 'Sitemap'
       ),
-      GoRoute(path: '/Cafeteria',
+      GoRoute(path: '/cafeteria',
           builder: (context, state) =>Cafeteria(),
           name: 'Cafeteria'
       ),

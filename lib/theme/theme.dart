@@ -20,6 +20,7 @@ class SchoolTheme {
     seedColor: primaryColor,
     secondary: secondaryColor,
     tertiary: optionalColor,
+    onPrimary: secondaryColor,
     primaryContainer: Colors.white,
     secondaryContainer: Colors.black,
   );
@@ -64,6 +65,7 @@ class SchoolTheme {
         backgroundColor: primaryColor,
         selectedItemColor: optionalColor,
         unselectedItemColor: secondaryColor,
+        showUnselectedLabels: true,
         selectedLabelStyle: textTheme().bodySmall,
       ),
       buttonTheme: ButtonThemeData(
@@ -72,8 +74,31 @@ class SchoolTheme {
         focusColor: optionalColor,
       ),
       drawerTheme: DrawerThemeData(
-        backgroundColor: primaryColor,shadowColor: Colors.black
+          backgroundColor: primaryColor, shadowColor: Colors.black
       ),
+      expansionTileTheme: ExpansionTileThemeData(
+        backgroundColor: secondaryColor,
+        iconColor: Colors.white
+      ),
+     /* elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+              backgroundColor: secondaryColor,
+              shadowColor: optionalColor)*/
+
+
+      //)
     );
   }
+
+
+  static ThemeData secondarySetup() {
+    return ThemeData(
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: secondaryColor
+      )
+    );
+
+  }
+
+
 }

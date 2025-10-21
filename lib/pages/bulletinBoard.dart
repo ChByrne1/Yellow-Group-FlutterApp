@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
-import 'package:yellow_group_flutterapp/navigation/appBar.dart';
+import 'package:yellow_group_flutterapp/navigation/overview.dart';
 
 import '../navigation/bottomNav.dart';
 
@@ -28,13 +28,12 @@ class BulletinBoardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pageSetup = SchoolTheme.pageSetup();
     // Sort items by date (newest first)
     List<Map<String, dynamic>> sortedItems = List.from(newsItems);
     sortedItems.sort((a, b) => b['date'].compareTo(a['date']));
 
     return Container(
-      color: pageSetup.appBarTheme.backgroundColor,
+      //color: pageSetup.appBarTheme.backgroundColor,
     child:
     SafeArea(
         child: Scaffold(
@@ -45,7 +44,7 @@ class BulletinBoardPage extends StatelessWidget {
         children: [
           // Header widget that stays at the top
           Container(
-            color: pageSetup.primaryColor,
+            //color: pageSetup.primaryColor,
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
             child: Row(
               children: [
