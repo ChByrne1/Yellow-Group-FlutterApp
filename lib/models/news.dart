@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'news.g.dart';
-import 'news.freezed.dart'
+part 'news.g.dart';
+part 'news.freezed.dart';
 
 @freezed
 class SchoolNews with _$SchoolNews  {

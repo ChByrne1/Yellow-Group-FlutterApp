@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'cafeteria_special.g.dart';
-import 'cafeteria_special.freezed.dart'
+part 'cafeteria_special.g.dart';
+part 'cafeteria_special.freezed.dart';
 
 enum DayOfWeek {
   Monday,

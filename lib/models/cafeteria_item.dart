@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 
-import 'cafeteria_item.g.dart';
-import 'cafeteria_item.freezed.dart'
+part 'cafeteria_item.g.dart';
+part 'cafeteria_item.freezed.dart';
 
 enum MenuCategory {
   side,
