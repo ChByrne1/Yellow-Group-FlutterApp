@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Theme/theme.dart';
 import 'navigation/overview.dart';
-import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 
 
 void main() {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp.router(
-      //routerConfig: routes,
+      routerConfig: routes,
 
       title: 'YellowGroup',
       theme: pageSetup,
@@ -33,31 +32,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pageIndex = 0;
-
-  final pages = [const HomeScreen(), Page1(), const Page2()];
 
   @override
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return Container(
         color: pageSetup.appBarTheme.backgroundColor,
-      child:
-      SafeArea(
-        child: Scaffold(
-            appBar: YellowAppBar(),
+        child:
+        SafeArea(
+          child: Scaffold(
+            body: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage("images/homePageBackground.jpg"), fit: BoxFit.fitHeight,),
+                  ),
+                ),
+                Center(
+                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
+                ),
+                //this is where the news will go
+                Container(
+                  child: ListView.builder(itemCount: 3,
+                      itemBuilder:  (context, index) {
+
+                      }
+                  ),
+                )
+              ],
+            ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            //Everything can be put below here.
-
-
-      ),
-    )
+          ),
+        )
     );
   }
 
 
-  }
-
-
-
+}
