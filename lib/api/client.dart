@@ -3,7 +3,7 @@
 import 'package:http/http.dart' as http;
 
 import '../network/overview.dart';
-import 'school_service.dart';
+import 'overview.dart';
 import 'package:chopper/chopper.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,7 +14,7 @@ class ApiClient {
     String? Function()? apiKeyProvider,
     http.Client? httpClient,
 }
-      ) : _baseUrl = baseURL,
+      ) : _baseURL = baseURL,
   _apiKeyProvider = apiKeyProvider ?? (() => null),
   _httpClient = httpClient;
 

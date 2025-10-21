@@ -1,23 +1,22 @@
 import 'package:chopper/chopper.dart';
 
-import '../models/overview.dart';
-import 'model_reponse.dart';
 
-typedef RecipeResponse = Response<Result<QueryResult>>;
-typedef RecipeDetailsResponse = Response<Result<Book>>;
+// For Generic - Response<List<Map<String, dynamic>>>;
+
+typedef EventsResponse = Response<List<Map<String, dynamic>>>;
+typedef CafeteriaItemResponse = Response<List<Map<String, dynamic>>>;
+typedef CafeteriaSpecialResponse = Response<List<Map<String, dynamic>>>;
+typedef CafeteriaMenuResponse = Response<List<Map<String, dynamic>>>;
+typedef NewsResponse = Response<List<Map<String, dynamic>>>;
+typedef SchoolResponse = Response<List<Map<String, dynamic>>>;
 
 abstract class ServiceInterface {
-  /// Query recipes with the given query string
-  /// offset is the starting point
-  /// number is the number of items
-  Future<RecipeResponse> queryRecipes(
-      String query,
-      int offset,
-      int number,
-      );
+  Future<EventsResponse> getEvents();
+  Future<CafeteriaItemResponse > getCafeteriaItems();
+  Future<CafeteriaSpecialResponse> getCafeteriaSpecial();
+  Future<CafeteriaMenuResponse> getMenu();
+  Future<NewsResponse> getNews();
+  Future<SchoolResponse> getSchool();
 
-  /// Get the details of a specific recipe
-  Future<RecipeDetailsResponse> queryRecipe(
-      String id,
-      );
+
 }

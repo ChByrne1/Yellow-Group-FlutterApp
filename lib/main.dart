@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp.router(
-      routerConfig: routes,
+      //routerConfig: routes,
 
       title: 'YellowGroup',
       theme: pageSetup,

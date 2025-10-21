@@ -1,3 +1,4 @@
+/*
 import 'package:go_router/go_router.dart';
 import 'package:yellow_group_flutterapp/pages/AboutApp.dart';
 import 'package:yellow_group_flutterapp/pages/AboutUs.dart';
@@ -36,4 +37,4 @@ GoRouter(
           name: 'AboutApp'
       ),
     ]
-);
+);*/

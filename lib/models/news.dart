@@ -1,5 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'news.g.dart';
+import 'news.freezed.dart'
+
 @freezed
 class SchoolNews with _$SchoolNews  {
   const factory SchoolNews (

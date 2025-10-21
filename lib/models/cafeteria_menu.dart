@@ -2,7 +2,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'cafeteria_item.dart';
-
+import 'cafeteria_special.g.dart';
+import 'cafeteria_special.freezed.dart'
 
 
 @freezed

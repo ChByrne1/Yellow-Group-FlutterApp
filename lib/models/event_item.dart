@@ -2,6 +2,9 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'event_item.g.dart';
+import 'event_item.freezed.dart'
+
 @freezed
 class EventItem with _$EventItem  {
   const factory EventItem (
