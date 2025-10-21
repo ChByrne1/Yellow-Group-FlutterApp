@@ -33,9 +33,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pageIndex = 0;
-
-  final pages = [const HomeScreen(), Page1(), const Page2()];
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +42,30 @@ class _HomePageState extends State<HomePage> {
       child:
       SafeArea(
         child: Scaffold(
-            appBar: YellowAppBar(),
+            body: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage("images/homePageBackground.jpg"), fit: BoxFit.fitHeight,),
+                  ),
+                ),
+                Center(
+                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
+                ),
+                //this is where the news will go
+                Container(
+                  child: ListView.builder(itemCount: 3,
+                      itemBuilder:  (context, index) {
+
+                      }
+                  ),
+                )
+              ],
+            ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            //Everything can be put below here.
-
-
       ),
     )
     );
   }
-
-
-  }
-
-
-
+}

@@ -31,8 +31,8 @@ class YellowBottomNavs extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(0),
+          topRight: Radius.circular(0),
 
         ),
       ),
@@ -47,12 +47,12 @@ class YellowBottomNavs extends StatelessWidget {
                 ? const Icon(
               Icons.home_filled,
               color: Colors.white,
-              size: 35,
+              size: 50,
             )
                 : const Icon(
               Icons.home_outlined,
               color: Colors.white,
-              size: 35,
+              size: 50,
             ),
           ),
           IconButton(
@@ -63,12 +63,12 @@ class YellowBottomNavs extends StatelessWidget {
                 ? const Icon(
               Icons.calendar_month,
               color: Colors.white,
-              size: 35,
+              size: 50,
             )
                 : const Icon(
               Icons.calendar_month_outlined,
               color: Colors.white,
-              size: 35,
+              size: 50,
             ),
           ),
           IconButton(
@@ -79,12 +79,12 @@ class YellowBottomNavs extends StatelessWidget {
                 ? const Icon(
               Icons.account_tree,
               color: Colors.white,
-              size: 35,
+              size: 50,
             )
                 : const Icon(
               Icons.account_tree_outlined,
               color: Colors.white,
-              size: 35,
+              size: 50,
             ),
           ),
 
