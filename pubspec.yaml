@@ -12,16 +12,16 @@ environment:
 
 
 dependencies:
-  go_router: ^13.0.0
   flutter:
     sdk: flutter
 
-
+  go_router: ^13.0.0
+  chopper: ^6.1.4
+  http: ^1.1.0
   cupertino_icons: ^1.0.8
   freezed_annotation: ^2.4.1
-  http: ^1.5.0
-chopper: ^6.1.4
-http: ^1.1.0
+  analyzer: ^5.4.0
+
 
 
 
@@ -35,6 +35,7 @@ dev_dependencies:
   chopper_generator: ^6.0.3
   freezed: ^2.4.1
   flutter_lints: ^5.0.0
+  http: ^1.2.2
 
 
 flutter:
@@ -60,7 +61,7 @@ fonts:
 
   - family: AverageSans
     fonts:
-      -assets: fonts/AverageSans-Regular.ttf
+      -asset: fonts/AverageSans-Regular.ttf
       weight: 200
 
 

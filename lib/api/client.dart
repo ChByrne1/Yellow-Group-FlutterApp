@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../network/overview.dart';
 import 'overview.dart';
 import 'package:chopper/chopper.dart';
-import 'package:http/http.dart' as http;
+
 
 class ApiClient {
   ApiClient(
@@ -31,7 +31,7 @@ class ApiClient {
   interceptors:
       [
         APIKeyInterceptor(_apiKeyProvider),
-  HttpLoggingInterceptor(),
+        HttpLoggingInterceptor(),
   ]
   );
 
