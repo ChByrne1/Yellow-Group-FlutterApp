@@ -9,6 +9,7 @@ part 'cafeteria_special.freezed.dart';
 @freezed
 class CafeteriaMenu with _$CafeteriaMenu  {
   const factory CafeteriaMenu (
+      {
       List<CafeteriaItem> menuItems,
       }) = _CafeteriaMenu ;
 

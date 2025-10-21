@@ -7,11 +7,12 @@ part 'news.freezed.dart';
 class SchoolNews with _$SchoolNews  {
   const factory SchoolNews (
       {int? id,
+        int? SchoolId,
         String? Headline,
         String? Content,
         DateTime? DatePublished,
-        String? Author
-        int? SchoolId,
+        String? Author,
+
       }) = _SchoolNews ;
 
   // Create a Ingredient from JSON data
