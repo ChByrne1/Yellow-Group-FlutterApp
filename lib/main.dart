@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'navigation/appBar.dart';
-import 'navigation/drawer.dart';
-import 'navigation/goRouter.dart';
 import 'Theme/theme.dart';
-import 'navigation/bottomNav.dart';
-import 'package:http/http.dart' as http;
+import 'navigation/overview.dart';
+import 'package:yellow_group_flutterapp/ChPages/DemoPages.dart';
 
 
 void main() {
@@ -19,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return MaterialApp.router(
-      routerConfig: routes,
+      //routerConfig: routes,
 
       title: 'YellowGroup',
       theme: pageSetup,

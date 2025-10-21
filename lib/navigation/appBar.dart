@@ -8,12 +8,8 @@ class YellowAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
 
     Widget build(BuildContext context) {
-    final pageSetup = SchoolTheme.pageSetup();
-
       return Scaffold(
           body: AppBar(
-            backgroundColor: pageSetup.appBarTheme.backgroundColor,
-
         leading: CircleAvatar(
           radius: 25,
           backgroundImage: AssetImage('assets/school_logo.png'),
