@@ -10,10 +10,12 @@ class LibraryBar extends StatelessWidget {
 
   Widget build(BuildContext context)
   {
-    final pageSetup = SchoolTheme.pageSetup();
+    final pageSetup = SchoolTheme();
+    final test = Theme.of(context);
+
 
     return Container(
-      color: pageSetup.primaryColor,
+      color: test.colorScheme.onPrimary,
         child:Row(
         children: [
         ElevatedButton(

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
-import 'package:yellow_group_flutterapp/navigation/appBar.dart';
-import 'package:yellow_group_flutterapp/navigation/drawer.dart';
+import 'package:yellow_group_flutterapp/navigation/overView.dart';
 
-import '../navigation/bottomNav.dart';
-
-class Cafeteria extends StatelessWidget {
-  const Cafeteria({super.key});
+class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +16,10 @@ class Cafeteria extends StatelessWidget {
                 appBar: YellowAppBar(),
                 bottomNavigationBar: YellowBottomNav(),
                 drawer: YellowDrawerNav()
-                //Everything can be put below here.
-               // body: ,
+              //Everything can be put below here.
+              // body: ,
             )
         )
     );
   }
 }
-

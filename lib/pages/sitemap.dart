@@ -23,15 +23,15 @@ class SiteMap extends StatelessWidget {
               body: ListView(
                 children: [
                   ExpansionTile(
-                    title: Text('Campus'),
+                    title: Text('Campus', style: pageSetup.textTheme.titleLarge),
                     children: <Widget>[
                       TextButton(
                         onPressed: () => context.go('/Cafeteria'),
-                        child: Text("Cafeteria"),
+                        child: Text("Cafeteria", style: pageSetup.textTheme.titleMedium),
                       ),
                       TextButton(
                         onPressed: () => context.go('/library'),
-                        child: Text("Library"),
+                        child: Text("Library", style: pageSetup.textTheme.titleMedium),
                       ),
                     ],
                   ),
@@ -55,11 +55,11 @@ class SiteMap extends StatelessWidget {
                     children: <Widget>[
                       TextButton(
                         onPressed: () => context.go('/AboutUs'),
-                        child: Text("About WVUP"),
+                        child: Text("About WVUP", style: pageSetup.textTheme.titleMedium),
                       ),
                       TextButton(
                         onPressed: () => context.go('/AboutApp'),
-                        child: Text("App Info"),
+                        child: Text("App Info", style: pageSetup.textTheme.titleMedium),
                       ),
                     ],
                   ),
