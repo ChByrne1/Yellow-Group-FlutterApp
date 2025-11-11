@@ -51,23 +51,21 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Center(
-                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
+                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.headlineLarge),
                 ),
                 //this is where the news will go
                 Container(
-                  child: ListView.builder(itemCount: 3,
+                  /*child: ListView.builder(itemCount: 3,
                       itemBuilder:  (context, index) {
                         return null;
-                      
 
                       }
-                  ),
+                  ),*/
                 )
               ],
             ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            appBar: YellowAppBar(),
           ),
         )
     );

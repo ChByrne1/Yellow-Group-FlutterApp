@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
 import 'package:yellow_group_flutterapp/navigation/overview.dart';
 
-import '../navigation/bottomNav.dart';
 
 class SiteMap extends StatelessWidget {
   const SiteMap({super.key});

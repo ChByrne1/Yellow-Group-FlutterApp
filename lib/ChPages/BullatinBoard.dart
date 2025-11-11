@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BulletinBoard extends StatelessWidget {
-  const BulletinBoard({Key? key}) : super(key: key);
+  const BulletinBoard({super.key});
 
   // Example data
   final List<Map<String, dynamic>> newsItems = const [
