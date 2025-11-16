@@ -1,5 +1,4 @@
 /*
-
 class APIKeyInterceptor implements Interceptor {
   APIKeyInterceptor(this._getAPIKey);
 

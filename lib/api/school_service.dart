@@ -2,6 +2,7 @@ import 'package:chopper/chopper.dart';
 part 'school_service.chopper.dart';
 
 
+
 @ChopperApi(baseUrl: 'test' )
 
 abstract class SchoolService extends ChopperService
