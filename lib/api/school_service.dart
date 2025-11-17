@@ -3,12 +3,12 @@ part 'school_service.chopper.dart';
 
 
 
-@ChopperApi(baseUrl: 'test' )
+@ChopperApi(baseUrl: '/v1/Health')
 
 abstract class SchoolService extends ChopperService
 {
   static SchoolService create ([ChopperClient? client]) => _$SchoolService(client);
 
-  @Get(path: 'ping')
+  @Get(path: '/ping')
   Future<Response<String>> ping();
 }
