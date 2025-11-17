@@ -1,0 +1,321 @@
+-- Seed data (TRUNCATE + RESTART) - Generated 2025-11-05T14:23:07.775402Z
+-- WARNING: This will delete existing rows in these tables.
+-- Run with: psql --set=ON_ERROR_STOP=1 -f seed_sample_truncate.sql
+
+BEGIN;
+
+TRUNCATE TABLE
+  security_alerts, school_news, school_events, announcements,
+  hours_of_operation, cafeteria_item, cafeteria_menus,
+  business_offices, librarys, registrars, securitys,
+  tutoring_centers, campuses, address, gps_coordinate,
+  user_profiles, user_preferences, schools
+RESTART IDENTITY CASCADE;
+
+
+-- ------------------------------------------------------------------
+-- GPS coordinates
+-- ------------------------------------------------------------------
+INSERT INTO public.gps_coordinate (id, latitude, longitude, is_deleted, "timestamp") VALUES
+  (1, 39.2679, -81.5615, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 39.0206, -81.6479, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Addresses
+-- ------------------------------------------------------------------
+INSERT INTO public.address (id, gps_coordinate_id, street_address1, street_address2, city, state, postal_code, country, is_deleted, "timestamp") VALUES
+  (1, 1, '300 Campus Dr', '', 'Parkersburg', 'WV', '26104', 'USA', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, '107 Academy Dr', '', 'Ripley', 'WV', '25271', 'USA', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Schools
+-- ------------------------------------------------------------------
+INSERT INTO public.schools (id, name, email, website, phone_number, is_deleted, "timestamp") VALUES
+  (1, 'WVU Parkersburg', 'info@wvup.edu', 'https://www.wvup.edu', '+1-304-424-8000', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Mid-Ohio Technical College', 'contact@motc.edu', 'https://www.motc.edu', '+1-304-555-1000', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Campuses
+-- ------------------------------------------------------------------
+INSERT INTO public.campuses (id, name, address_id, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Main Campus', 1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Jackson County Center', 2, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Offices
+-- ------------------------------------------------------------------
+INSERT INTO public.business_offices (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.librarys (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.registrars (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.securitys (id, campus_id, office_location, contact_number, emergency_number, email, is_deleted, "timestamp") VALUES
+  (1, 1, 'Room A-101', '+1-304-424-8100', '911', 'security@wvup.edu', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, 'Room J-12',  '+1-304-424-8200', '911', 'security-jcc@wvup.edu', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.tutoring_centers (id, school_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Hours of Operation
+-- ------------------------------------------------------------------
+INSERT INTO public.hours_of_operation (id, day, open_time, close_time, business_office_id, library_id, registrar_id, security_id, tutoring_center_id, is_deleted, "timestamp") VALUES
+  (1, 'Monday',    '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Tuesday',   '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (3, 'Wednesday', '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (4, 'Thursday',  '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (5, 'Friday',    '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (6, 'Monday',    '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (7, 'Tuesday',   '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (8, 'Wednesday', '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (9, 'Thursday',  '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (10,'Friday',    '08:00:00', '18:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (11,'Monday',    '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (12,'Tuesday',   '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (13,'Wednesday', '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (14,'Thursday',  '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (15,'Friday',    '09:00:00', '15:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (16,'Monday',    '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (17,'Tuesday',   '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (18,'Wednesday', '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (19,'Thursday',  '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (20,'Friday',    '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (21,'Monday',    '10:00:00', '18:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (22,'Wednesday', '10:00:00', '18:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (23,'Friday',    '10:00:00', '16:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Cafeteria
+-- ------------------------------------------------------------------
+INSERT INTO public.cafeteria_menus (id, is_deleted, "timestamp") VALUES
+  (1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.cafeteria_item (id, category, name, description, icon_name, cafeteria_menu_id, is_deleted, "timestamp") VALUES
+  (1, 1, 'Grilled Chicken Sandwich', 'Served on a whole wheat bun with lettuce and tomato', 'chicken', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, 'Garden Salad',             'Mixed greens with seasonal veggies',                  'salad',   1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (3, 3, 'Iced Tea',                 'Freshly brewed, unsweetened',                         'drink',   1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (4, 4, 'Chocolate Chip Cookie',    'Baked daily',                                         'cookie',  1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Announcements & News
+-- ------------------------------------------------------------------
+INSERT INTO public.announcements (id, title, message, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Welcome Back!', 'Fall semester begins next week. Check your schedules.', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Maintenance Window', 'Online services will be unavailable Saturday 2â€“4 AM.', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.school_news (id, headline, content, date_published, author, school_id, is_deleted, "timestamp") VALUES
+  (1, 'New STEM Lab Opens', 'The new STEM lab features state-of-the-art equipment.', NOW() - INTERVAL '10 days', 'Press Office', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Scholarship Applications', 'Applications for Spring scholarships are now open.', NOW() - INTERVAL '3 days', 'Financial Aid', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Events
+-- ------------------------------------------------------------------
+INSERT INTO public.school_events (id, title, description, start, "end", campus_id, location, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Welcome Fair', 'Clubs and organizations showcase.', NOW() + INTERVAL '7 days', NOW() + INTERVAL '7 days 2 hours', 1, 'Student Union', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Career Day',   'Meet with local employers.',       NOW() + INTERVAL '21 days', NOW() + INTERVAL '21 days 3 hours', 2, 'Gymnasium',     1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Security Alerts
+-- ------------------------------------------------------------------
+INSERT INTO public.security_alerts (id, title, message, alert_date, level, is_active, security_id, is_deleted, "timestamp") VALUES
+  (1, 'Weather Advisory', 'Severe thunderstorm watch until 6 PM.', NOW(), 2, TRUE, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+-- ------------------------------------------------------------------
+-- Users
+-- ------------------------------------------------------------------
+INSERT INTO public.user_profiles (id, user_id, is_deleted, "timestamp") VALUES
+  (1, 'alice', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'bob',   FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+INSERT INTO public.user_preferences (id, user_id, is_deleted, "timestamp") VALUES
+  (1, 'alice', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'bob',   FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+;;
+
+
+COMMIT;
+
+
+
+
+---------
+-- Seed data (Idempotent UPSERT) - Generated 2025-11-05T14:23:07.775402Z
+-- This version will NOT delete existing data. It skips rows that already exist.
+-- Run with: psql --set=ON_ERROR_STOP=1 -f seed_sample_upsert.sql
+
+BEGIN;
+
+
+-- ------------------------------------------------------------------
+-- GPS coordinates
+-- ------------------------------------------------------------------
+INSERT INTO public.gps_coordinate (id, latitude, longitude, is_deleted, "timestamp") VALUES
+  (1, 39.2679, -81.5615, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 39.0206, -81.6479, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Addresses
+-- ------------------------------------------------------------------
+INSERT INTO public.address (id, gps_coordinate_id, street_address1, street_address2, city, state, postal_code, country, is_deleted, "timestamp") VALUES
+  (1, 1, '300 Campus Dr', '', 'Parkersburg', 'WV', '26104', 'USA', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, '107 Academy Dr', '', 'Ripley', 'WV', '25271', 'USA', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Schools
+-- ------------------------------------------------------------------
+INSERT INTO public.schools (id, name, email, website, phone_number, is_deleted, "timestamp") VALUES
+  (1, 'WVU Parkersburg', 'info@wvup.edu', 'https://www.wvup.edu', '+1-304-424-8000', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Mid-Ohio Technical College', 'contact@motc.edu', 'https://www.motc.edu', '+1-304-555-1000', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Campuses
+-- ------------------------------------------------------------------
+INSERT INTO public.campuses (id, name, address_id, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Main Campus', 1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Jackson County Center', 2, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Offices
+-- ------------------------------------------------------------------
+INSERT INTO public.business_offices (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.librarys (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.registrars (id, campus_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.securitys (id, campus_id, office_location, contact_number, emergency_number, email, is_deleted, "timestamp") VALUES
+  (1, 1, 'Room A-101', '+1-304-424-8100', '911', 'security@wvup.edu', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, 'Room J-12',  '+1-304-424-8200', '911', 'security-jcc@wvup.edu', FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.tutoring_centers (id, school_id, is_deleted, "timestamp") VALUES
+  (1, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Hours of Operation
+-- ------------------------------------------------------------------
+INSERT INTO public.hours_of_operation (id, day, open_time, close_time, business_office_id, library_id, registrar_id, security_id, tutoring_center_id, is_deleted, "timestamp") VALUES
+  (1, 'Monday',    '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Tuesday',   '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (3, 'Wednesday', '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (4, 'Thursday',  '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (5, 'Friday',    '08:30:00', '16:30:00', 1, NULL, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (6, 'Monday',    '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (7, 'Tuesday',   '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (8, 'Wednesday', '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (9, 'Thursday',  '08:00:00', '20:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (10,'Friday',    '08:00:00', '18:00:00', NULL, 1, NULL, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (11,'Monday',    '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (12,'Tuesday',   '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (13,'Wednesday', '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (14,'Thursday',  '09:00:00', '17:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (15,'Friday',    '09:00:00', '15:00:00', NULL, NULL, 1, NULL, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (16,'Monday',    '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (17,'Tuesday',   '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (18,'Wednesday', '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (19,'Thursday',  '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (20,'Friday',    '00:00:00', '24:00:00', NULL, NULL, NULL, 1, NULL, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (21,'Monday',    '10:00:00', '18:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (22,'Wednesday', '10:00:00', '18:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (23,'Friday',    '10:00:00', '16:00:00', NULL, NULL, NULL, NULL, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Cafeteria
+-- ------------------------------------------------------------------
+INSERT INTO public.cafeteria_menus (id, is_deleted, "timestamp") VALUES
+  (1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.cafeteria_item (id, category, name, description, icon_name, cafeteria_menu_id, is_deleted, "timestamp") VALUES
+  (1, 1, 'Grilled Chicken Sandwich', 'Served on a whole wheat bun with lettuce and tomato', 'chicken', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 2, 'Garden Salad',             'Mixed greens with seasonal veggies',                  'salad',   1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (3, 3, 'Iced Tea',                 'Freshly brewed, unsweetened',                         'drink',   1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (4, 4, 'Chocolate Chip Cookie',    'Baked daily',                                         'cookie',  1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Announcements & News
+-- ------------------------------------------------------------------
+INSERT INTO public.announcements (id, title, message, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Welcome Back!', 'Fall semester begins next week. Check your schedules.', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Maintenance Window', 'Online services will be unavailable Saturday 2â€“4 AM.', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.school_news (id, headline, content, date_published, author, school_id, is_deleted, "timestamp") VALUES
+  (1, 'New STEM Lab Opens', 'The new STEM lab features state-of-the-art equipment.', NOW() - INTERVAL '10 days', 'Press Office', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Scholarship Applications', 'Applications for Spring scholarships are now open.', NOW() - INTERVAL '3 days', 'Financial Aid', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Events
+-- ------------------------------------------------------------------
+INSERT INTO public.school_events (id, title, description, start, "end", campus_id, location, school_id, is_deleted, "timestamp") VALUES
+  (1, 'Welcome Fair', 'Clubs and organizations showcase.', NOW() + INTERVAL '7 days', NOW() + INTERVAL '7 days 2 hours', 1, 'Student Union', 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'Career Day',   'Meet with local employers.',       NOW() + INTERVAL '21 days', NOW() + INTERVAL '21 days 3 hours', 2, 'Gymnasium',     1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Security Alerts
+-- ------------------------------------------------------------------
+INSERT INTO public.security_alerts (id, title, message, alert_date, level, is_active, security_id, is_deleted, "timestamp") VALUES
+  (1, 'Weather Advisory', 'Severe thunderstorm watch until 6 PM.', NOW(), 2, TRUE, 1, FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+-- ------------------------------------------------------------------
+-- Users
+-- ------------------------------------------------------------------
+INSERT INTO public.user_profiles (id, user_id, is_deleted, "timestamp") VALUES
+  (1, 'alice', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'bob',   FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+INSERT INTO public.user_preferences (id, user_id, is_deleted, "timestamp") VALUES
+  (1, 'alice', FALSE, EXTRACT(EPOCH FROM NOW())::bigint),
+  (2, 'bob',   FALSE, EXTRACT(EPOCH FROM NOW())::bigint)
+ON CONFLICT (id) DO NOTHING;;
+
+
+COMMIT;
+
+
