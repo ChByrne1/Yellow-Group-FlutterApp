@@ -1,3 +1,5 @@
+
+
 import 'package:http/http.dart' as http;
 
 import '../network/overview.dart';
@@ -28,7 +30,7 @@ class ApiClient {
   errorConverter: const ModelConverter(),
   interceptors:
       [
-        /*APIKeyInterceptor(_apiKeyProvider),*/
+        APIKeyInterceptor(_apiKeyProvider),
         HttpLoggingInterceptor(),
   ]
   );

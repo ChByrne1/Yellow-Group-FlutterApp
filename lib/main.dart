@@ -1,12 +1,6 @@
-import 'dart:developer';
-
-import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
-import 'package:yellow_group_flutterapp/mock_service.dart';
-import 'package:yellow_group_flutterapp/network/overview.dart';
 import 'Theme/theme.dart';
 import 'navigation/overview.dart';
-import 'api/overview.dart';
 
 
 void main() {
@@ -38,17 +32,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
-    news.sort((a, b) => a.DatePublished!.millisecondsSinceEpoch.compareTo(b.DatePublished!.millisecondsSinceEpoch));
     final pageSetup = SchoolTheme.pageSetup();
     return Container(
         color: pageSetup.appBarTheme.backgroundColor,
         child:
         SafeArea(
           child: Scaffold(
-            //extends the picture behind the bottom nav
-            extendBody: true,
             body: Stack(
               children: <Widget>[
                 Container(
@@ -57,27 +49,16 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Center(
-                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.headlineLarge),
+                  child: Text('West Virginia University Parkersburg', style: pageSetup.textTheme.titleLarge),
                 ),
-
                 //this is where the news will go
-                Positioned(
-                  child: ListView.builder(
-                    itemCount: 3,
-                    shrinkWrap: true,
-                    itemBuilder:  (context, index) {
-                      var newsItem = news[index];
-                      return ExpansionTile(
-                        title: Text(newsItem.Headline!),
-                        subtitle: Text('Written by ${newsItem.Author}, Pub. ${newsItem.DatePublished!.year}/${newsItem.DatePublished!.month}/${newsItem.DatePublished!.day}'),
-                        children: [
-                          Text('${newsItem.Content!.substring(0, 32)}...'),
-                        ],
-                      );
-                    }
-                ),
-                ),
+                Container(
+                  child: ListView.builder(itemCount: 3,
+                      itemBuilder:  (context, index) {
 
+                      }
+                  ),
+                )
               ],
             ),
             bottomNavigationBar: YellowBottomNav(),
@@ -87,8 +68,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  //I just need to plug a functioning service in here and this page is more-or-less done
-  var service = MockNewsService();
-  var news = MockNewsService.getNews();
 
 }
