@@ -8,7 +8,11 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
+<<<<<<< HEAD
   sdk: ^3.8.0 #\\Needs to be updated
+=======
+  sdk: '>=3.7.0 <4.0.0'
+>>>>>>> 9abe9cf3665c9f59519abc14e93f57b95bde3f22
 
 
 dependencies:
