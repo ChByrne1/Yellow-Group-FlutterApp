@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yellow_group_flutterapp/navigation/overview.dart';
 
-
-class BulletinBoardPage extends StatelessWidget {
-  const BulletinBoardPage({super.key});
+class BulletinBoard extends StatelessWidget {
+  const BulletinBoard({super.key});
 
   // Example data
   final List<Map<String, dynamic>> newsItems = const [
@@ -30,19 +28,13 @@ class BulletinBoardPage extends StatelessWidget {
     List<Map<String, dynamic>> sortedItems = List.from(newsItems);
     sortedItems.sort((a, b) => b['date'].compareTo(a['date']));
 
-    return Container(
-      //color: pageSetup.appBarTheme.backgroundColor,
-    child:
-    SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: Colors.grey[100],
-          bottomNavigationBar: YellowBottomNav(),
-      appBar: YellowAppBar(),
       body: Column(
         children: [
           // Header widget that stays at the top
           Container(
-            //color: pageSetup.primaryColor,
+            color: Colors.yellow[700],
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
             child: Row(
               children: [
@@ -55,11 +47,18 @@ class BulletinBoardPage extends StatelessWidget {
                 const SizedBox(width: 12),
 
                 // School name and title
-            Flexible(
-              child: Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
-
+                    Text(
+                      'West Virginia University at Parkersburg',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 4),
                     Text(
                       '📢 School Bulletin Board',
                       style: TextStyle(
@@ -68,8 +67,7 @@ class BulletinBoardPage extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
-            ),
+                ),
               ],
             ),
           ),
@@ -111,8 +109,6 @@ class BulletinBoardPage extends StatelessWidget {
           ),
         ],
       ),
-        ),
-    ),
     );
   }
 }

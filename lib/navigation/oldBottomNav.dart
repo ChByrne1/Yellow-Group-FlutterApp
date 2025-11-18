@@ -82,39 +82,7 @@ class YellowBottomNav extends StatelessWidget {
             ),
           ),
 
-          IconButton(
-            enableFeedback: false,
-            onPressed: () => context.go('/library'),
-            icon:
-            currentLocation == '/library'
-                ? const Icon(
-              Icons.calendar_month,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
 
-          IconButton(
-            enableFeedback: false,
-            onPressed: () => context.go('/cafeteria'),
-            icon:
-            currentLocation == '/cafeteria'
-                ? const Icon(
-              Icons.calendar_month,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
         ],
       ),
     );
