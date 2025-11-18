@@ -16,10 +16,11 @@ GoRouter(
               builder: (context, state) =>SiteMap(),
               name: 'Sitemap'
           ),
-     /* GoRoute(path: '/library',
+      GoRoute(path: '/library',
           builder: (context, state) =>LibraryPage(),
             name: 'Library'
       ),
+      /*
       GoRoute(path: '/Cafeteria',
           builder: (context, state) =>Cafeteria(),
           name: 'Cafeteria'

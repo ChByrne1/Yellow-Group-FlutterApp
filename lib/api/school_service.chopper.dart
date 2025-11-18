@@ -18,7 +18,7 @@ class _$SchoolService extends SchoolService {
 
   @override
   Future<Response<String>> ping() {
-    final Uri $url = Uri.parse('test/ping');
+    final Uri $url = Uri.parse('/v1/Health/ping');
     final Request $request = Request(
       'GET',
       $url,

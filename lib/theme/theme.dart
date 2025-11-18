@@ -103,6 +103,14 @@ class SchoolTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: secondaryColor,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+
+                backgroundColor: Colors.red,
+                shadowColor: Colors.amber
+
+        )
+      )
     );
   }
 }
