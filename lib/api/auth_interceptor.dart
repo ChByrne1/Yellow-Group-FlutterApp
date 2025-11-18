@@ -1,4 +1,7 @@
-/*
+import 'dart:async';
+import 'package:chopper/chopper.dart';
+
+
 class APIKeyInterceptor implements Interceptor {
   APIKeyInterceptor(this._getAPIKey);
 
@@ -21,4 +24,4 @@ class APIKeyInterceptor implements Interceptor {
     return chain.proceed(req);
 
   }
-}*/
+}

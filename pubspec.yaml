@@ -45,8 +45,6 @@ flutter:
 
   assets:
     - images/empty.jpg
-    - images/homePageBackground.jpg
-#    - images/school_logo.png
 
 
 fonts:
