@@ -44,3 +44,12 @@ var cs = config.GetConnectionString("DefaultConnection");
 
     var options = new DbContextOptionsBuilder<ApplicationDbContext>();
     options.UseNpgsql(cs);
+
+
+CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS                                                                                          NAMES
+73  mobileapidemo-mobileapi   "dotnet MobileAPI.dll"   5 minutes ago   Up 5 minutes   0.0.0.0:80->8080/tcp, [::]:80->8080/tcp                                                        mobileapi
+2d  jenkins-jenkins           "/usr/bin/tini -- /u…"   8 minutes ago   Up 8 minutes   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp   jenkins
+93  dpage/pgadmin4:latest     "/entrypoint.sh"         8 minutes ago   Up 8 minutes   443/tcp, 0.0.0.0:5050->80/tcp, [::]:5050->80/tcp                                               pgadmin
+2a   postgres:16               "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp                                                    postgres
+
+
