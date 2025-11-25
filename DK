@@ -53,3 +53,10 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 2a   postgres:16               "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp                                                    postgres
 
 
+SocketException: Name or service not known
+
+    System.Net.Dns.GetHostEntryOrAddressesCore(string hostName, bool justAddresses, AddressFamily addressFamily, Nullable<long> startingTimestamp)
+    System.Net.Dns+<>c.<GetHostEntryOrAddressesCoreAsync>b__33_0(object s, long startingTimestamp)
+    System.Net.Dns+<>c__DisplayClass39_0<TResult>.<RunAsync>b__0(Task <p0>, object <p1>)
+
+
