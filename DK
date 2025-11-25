@@ -2,3 +2,10 @@
 8c908671a76f   jenkins-jenkins           "/usr/bin/tini -- /u…"   2 days ago   Up 2 days   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp   jenkins
 0fadb1f10ae0   dpage/pgadmin4:latest     "/entrypoint.sh"         2 days ago   Up 2 days   443/tcp, 0.0.0.0:5050->80/tcp, [::]:5050->80/tcp                                               pgadmin
 b08a81aa7039   postgres:16               "docker-entrypoint.s…"   2 days ago   Up 2 days   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp                                                    postgres
+
+
+[s@localhost ~]$ docker inspect mobileapi --format '{{range $k, $v := .NetworkSettings.Networks}}{{println $k}}{{end}}'
+mobileapidemo_mobileapi
+
+[s@localhost ~]$ docker inspect postgres --format '{{range $k, $v := .NetworkSettings.Networks}}{{println $k}}{{end}}'
+postgres_default
