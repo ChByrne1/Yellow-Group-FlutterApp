@@ -9,3 +9,18 @@ mobileapidemo_mobileapi
 
 [s@localhost ~]$ docker inspect postgres --format '{{range $k, $v := .NetworkSettings.Networks}}{{println $k}}{{end}}'
 postgres_default
+
+
+#13 [build 7/7] RUN dotnet build "./MobileI.csproj" -c Release -o /app/build
+
+#13 1.146   Determining projects to restore...
+
+#13 1.588   All projects are up-to-date for restore.
+
+#13 2.631 /src/MobileI/Repos/RepoBase.cs(31,76): error CS1526: A new expression requires an argument list or (), [], or {} after type [/src/MobileI/MobileI.csproj]
+
+#13 2.631 /src/MobileI/Repos/RepoBase.cs(31,76): error CS1002: ; expected [/src/MobileAPI/MobileI.csproj]
+
+#13 2.645 
+
+#13 2.646 Build FAILED.
