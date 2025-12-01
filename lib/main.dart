@@ -41,8 +41,6 @@ class _HomePageState extends State<HomePage> {
         child:
         SafeArea(
           child: Scaffold(
-            //extends the picture behind the bottom nav
-            extendBody: true,
             body: Stack(
               children: <Widget>[
                 Container(
@@ -57,8 +55,6 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   child: ListView.builder(itemCount: 3,
                       itemBuilder:  (context, index) {
-                        return null;
-                      
 
                       }
                   ),
@@ -67,7 +63,6 @@ class _HomePageState extends State<HomePage> {
             ),
             bottomNavigationBar: YellowBottomNav(),
             drawer: YellowDrawerNav(),
-            appBar: YellowAppBar(),
           ),
         )
     );
