@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'cafeteria_item.dart';
+part of 'campus_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,42 +14,40 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-CafeteriaItem _$CafeteriaItemFromJson(Map<String, dynamic> json) {
-  return _CafeteriaItem.fromJson(json);
+Campus _$CampusFromJson(Map<String, dynamic> json) {
+  return _Campus.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CafeteriaItem {
+mixin _$Campus {
   int? get id => throw _privateConstructorUsedError;
-  int? get category => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  int? get addressId => throw _privateConstructorUsedError;
+  int? get schoolId => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  String? get iconName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CafeteriaItemCopyWith<CafeteriaItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CampusCopyWith<Campus> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CafeteriaItemCopyWith<$Res> {
-  factory $CafeteriaItemCopyWith(
-          CafeteriaItem value, $Res Function(CafeteriaItem) then) =
-      _$CafeteriaItemCopyWithImpl<$Res, CafeteriaItem>;
+abstract class $CampusCopyWith<$Res> {
+  factory $CampusCopyWith(Campus value, $Res Function(Campus) then) =
+      _$CampusCopyWithImpl<$Res, Campus>;
   @useResult
   $Res call(
       {int? id,
-      int? category,
       String? name,
-      String? description,
-      String? iconName});
+      int? addressId,
+      int? schoolId,
+      String? description});
 }
 
 /// @nodoc
-class _$CafeteriaItemCopyWithImpl<$Res, $Val extends CafeteriaItem>
-    implements $CafeteriaItemCopyWith<$Res> {
-  _$CafeteriaItemCopyWithImpl(this._value, this._then);
+class _$CampusCopyWithImpl<$Res, $Val extends Campus>
+    implements $CampusCopyWith<$Res> {
+  _$CampusCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -60,89 +58,88 @@ class _$CafeteriaItemCopyWithImpl<$Res, $Val extends CafeteriaItem>
   @override
   $Res call({
     Object? id = freezed,
-    Object? category = freezed,
     Object? name = freezed,
+    Object? addressId = freezed,
+    Object? schoolId = freezed,
     Object? description = freezed,
-    Object? iconName = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      addressId: freezed == addressId
+          ? _value.addressId
+          : addressId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      schoolId: freezed == schoolId
+          ? _value.schoolId
+          : schoolId // ignore: cast_nullable_to_non_nullable
+              as int?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      iconName: freezed == iconName
-          ? _value.iconName
-          : iconName // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$CafeteriaItemImplCopyWith<$Res>
-    implements $CafeteriaItemCopyWith<$Res> {
-  factory _$$CafeteriaItemImplCopyWith(
-          _$CafeteriaItemImpl value, $Res Function(_$CafeteriaItemImpl) then) =
-      __$$CafeteriaItemImplCopyWithImpl<$Res>;
+abstract class _$$CampusImplCopyWith<$Res> implements $CampusCopyWith<$Res> {
+  factory _$$CampusImplCopyWith(
+          _$CampusImpl value, $Res Function(_$CampusImpl) then) =
+      __$$CampusImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int? id,
-      int? category,
       String? name,
-      String? description,
-      String? iconName});
+      int? addressId,
+      int? schoolId,
+      String? description});
 }
 
 /// @nodoc
-class __$$CafeteriaItemImplCopyWithImpl<$Res>
-    extends _$CafeteriaItemCopyWithImpl<$Res, _$CafeteriaItemImpl>
-    implements _$$CafeteriaItemImplCopyWith<$Res> {
-  __$$CafeteriaItemImplCopyWithImpl(
-      _$CafeteriaItemImpl _value, $Res Function(_$CafeteriaItemImpl) _then)
+class __$$CampusImplCopyWithImpl<$Res>
+    extends _$CampusCopyWithImpl<$Res, _$CampusImpl>
+    implements _$$CampusImplCopyWith<$Res> {
+  __$$CampusImplCopyWithImpl(
+      _$CampusImpl _value, $Res Function(_$CampusImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? category = freezed,
     Object? name = freezed,
+    Object? addressId = freezed,
+    Object? schoolId = freezed,
     Object? description = freezed,
-    Object? iconName = freezed,
   }) {
-    return _then(_$CafeteriaItemImpl(
+    return _then(_$CampusImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
               as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      addressId: freezed == addressId
+          ? _value.addressId
+          : addressId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      schoolId: freezed == schoolId
+          ? _value.schoolId
+          : schoolId // ignore: cast_nullable_to_non_nullable
+              as int?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      iconName: freezed == iconName
-          ? _value.iconName
-          : iconName // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -150,86 +147,85 @@ class __$$CafeteriaItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CafeteriaItemImpl implements _CafeteriaItem {
-  const _$CafeteriaItemImpl(
-      {this.id, this.category, this.name, this.description, this.iconName});
+class _$CampusImpl implements _Campus {
+  const _$CampusImpl(
+      {this.id, this.name, this.addressId, this.schoolId, this.description});
 
-  factory _$CafeteriaItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CafeteriaItemImplFromJson(json);
+  factory _$CampusImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CampusImplFromJson(json);
 
   @override
   final int? id;
   @override
-  final int? category;
-  @override
   final String? name;
   @override
-  final String? description;
+  final int? addressId;
   @override
-  final String? iconName;
+  final int? schoolId;
+  @override
+  final String? description;
 
   @override
   String toString() {
-    return 'CafeteriaItem(id: $id, category: $category, name: $name, description: $description, iconName: $iconName)';
+    return 'Campus(id: $id, name: $name, addressId: $addressId, schoolId: $schoolId, description: $description)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CafeteriaItemImpl &&
+            other is _$CampusImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.addressId, addressId) ||
+                other.addressId == addressId) &&
+            (identical(other.schoolId, schoolId) ||
+                other.schoolId == schoolId) &&
             (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.iconName, iconName) ||
-                other.iconName == iconName));
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, category, name, description, iconName);
+      Object.hash(runtimeType, id, name, addressId, schoolId, description);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CafeteriaItemImplCopyWith<_$CafeteriaItemImpl> get copyWith =>
-      __$$CafeteriaItemImplCopyWithImpl<_$CafeteriaItemImpl>(this, _$identity);
+  _$$CampusImplCopyWith<_$CampusImpl> get copyWith =>
+      __$$CampusImplCopyWithImpl<_$CampusImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CafeteriaItemImplToJson(
+    return _$$CampusImplToJson(
       this,
     );
   }
 }
 
-abstract class _CafeteriaItem implements CafeteriaItem {
-  const factory _CafeteriaItem(
+abstract class _Campus implements Campus {
+  const factory _Campus(
       {final int? id,
-      final int? category,
       final String? name,
-      final String? description,
-      final String? iconName}) = _$CafeteriaItemImpl;
+      final int? addressId,
+      final int? schoolId,
+      final String? description}) = _$CampusImpl;
 
-  factory _CafeteriaItem.fromJson(Map<String, dynamic> json) =
-      _$CafeteriaItemImpl.fromJson;
+  factory _Campus.fromJson(Map<String, dynamic> json) = _$CampusImpl.fromJson;
 
   @override
   int? get id;
   @override
-  int? get category;
-  @override
   String? get name;
+  @override
+  int? get addressId;
+  @override
+  int? get schoolId;
   @override
   String? get description;
   @override
-  String? get iconName;
-  @override
   @JsonKey(ignore: true)
-  _$$CafeteriaItemImplCopyWith<_$CafeteriaItemImpl> get copyWith =>
+  _$$CampusImplCopyWith<_$CampusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

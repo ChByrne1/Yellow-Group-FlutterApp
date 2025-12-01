@@ -30,7 +30,7 @@ class ApiClient {
   errorConverter: const ModelConverter(),
   interceptors:
       [
-        APIKeyInterceptor(_apiKeyProvider),
+        apiKeyInterceptor(_apiKeyProvider),
         HttpLoggingInterceptor(),
   ]
   );
