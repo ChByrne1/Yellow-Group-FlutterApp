@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.0
+  sdk: ">=3.7.0 <4.0.0"
 
 
 dependencies:
@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   freezed_annotation: ^2.4.1
   analyzer: ^5.4.0
+  dio: ^5.0.0
 
 
 
@@ -45,6 +46,8 @@ flutter:
 
   assets:
     - images/empty.jpg
+    - images/homePageBackground.jpg
+#    - images/school_logo.png
 
 
 fonts:

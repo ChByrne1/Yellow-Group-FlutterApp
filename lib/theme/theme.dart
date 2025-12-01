@@ -20,7 +20,6 @@ class SchoolTheme {
     seedColor: primaryColor,
     secondary: secondaryColor,
     tertiary: optionalColor,
-    onPrimary: secondaryColor,
     primaryContainer: Colors.white,
     secondaryContainer: Colors.black,
   );
@@ -74,31 +73,36 @@ class SchoolTheme {
         focusColor: optionalColor,
       ),
       drawerTheme: DrawerThemeData(
-          backgroundColor: primaryColor, shadowColor: Colors.black
+        backgroundColor: primaryColor,
+        shadowColor: Colors.black,
       ),
       expansionTileTheme: ExpansionTileThemeData(
-        backgroundColor: secondaryColor,
-        iconColor: Colors.white
+        backgroundColor: primaryColor,
+        iconColor: Colors.white,
+        textColor: Colors.black,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(color: Colors.black, width: 3)),
+        collapsedTextColor: Colors.black,
+        collapsedShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(color: primaryColor, width: 3),
+        ),
+        collapsedBackgroundColor: Colors.white,
       ),
-     /* elevatedButtonTheme: ElevatedButtonThemeData(
+      /* elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
               backgroundColor: secondaryColor,
               shadowColor: optionalColor)*/
-
-
       //)
     );
   }
 
-
   static ThemeData secondarySetup() {
     return ThemeData(
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: secondaryColor
-      )
+        backgroundColor: secondaryColor,
+      ),
     );
-
   }
-
-
 }

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Theme/theme.dart';
+import '../../Theme/theme.dart';
 
 class LibraryBar extends StatelessWidget {
   const LibraryBar({super.key});

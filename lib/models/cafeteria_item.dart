@@ -1,24 +1,40 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../network/client.dart';
+import '../network/mobileService.dart';
+
 part 'cafeteria_item.g.dart';
 
 part 'cafeteria_item.freezed.dart';
 
-enum MenuCategory { side, drink, appetizer }
+//enum MenuCategory { side, drink, appetizer }
 
 @freezed
 class CafeteriaItem with _$CafeteriaItem {
   const factory CafeteriaItem({
     int? id,
-    String? Title,
-    String? Description,
-    DateTime? Start,
-    DateTime? End,
-    int? CampusId,
-    String? Location,
+    int? category,
+    String? name,
+    String? description,
+    String? iconName,
   }) = _CafeteriaItem;
 
-  // Create a Ingredient from JSON data
+
   factory CafeteriaItem.fromJson(Map<String, dynamic> json) =>
       _$CafeteriaItemFromJson(json);
+}
+
+Future<List<CafeteriaItem>> fetchCafeteriaItems() async {
+  final apiClient = ApiClient(baseURL: apiUrl);
+  final response = await apiClient.school.getCafeteria();
+
+  if (response.isSuccessful && response.body != null) {
+    List<Map<String, dynamic>>? jsonList = response.body;
+    List<CafeteriaItem> items = jsonList!
+        .map((json) => CafeteriaItem.fromJson(json as Map<String, dynamic>))
+        .toList();
+    return items;
+  } else {
+    return [];
+  }
 }
