@@ -6,8 +6,8 @@ import '../Theme/theme.dart';
 //created once to be pulled into other pages
 
 
-class YellowBottomNavs extends StatelessWidget {
-  const YellowBottomNavs({super.key});
+class YellowBottomNav extends StatelessWidget {
+  const YellowBottomNav({super.key});
 
 
 
@@ -73,7 +73,7 @@ class YellowBottomNavs extends StatelessWidget {
           ),
           IconButton(
             enableFeedback: false,
-            onPressed: () => context.go('/Sitemap'),
+            onPressed: () => Scaffold.of(context).openEndDrawer(),
             icon:
             currentLocation == '/Sitemap'
                 ? const Icon(
@@ -85,40 +85,6 @@ class YellowBottomNavs extends StatelessWidget {
               Icons.account_tree_outlined,
               color: Colors.white,
               size: 50,
-            ),
-          ),
-
-          IconButton(
-            enableFeedback: false,
-            onPressed: () => context.go('/library'),
-            icon:
-            currentLocation == '/library'
-                ? const Icon(
-              Icons.calendar_month,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-
-          IconButton(
-            enableFeedback: false,
-            onPressed: () => context.go('/cafeteria'),
-            icon:
-            currentLocation == '/cafeteria'
-                ? const Icon(
-              Icons.calendar_month,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.white,
-              size: 35,
             ),
           ),
         ],

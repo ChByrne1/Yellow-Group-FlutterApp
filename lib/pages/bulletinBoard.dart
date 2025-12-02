@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yellow_group_flutterapp/Theme/theme.dart';
 import 'package:yellow_group_flutterapp/navigation/overview.dart';
+import 'package:yellow_group_flutterapp/theme/theme.dart';
 
 import '../navigation/bottomNav.dart';
 
@@ -38,8 +39,9 @@ class BulletinBoardPage extends StatelessWidget {
     SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey[100],
-          bottomNavigationBar: YellowBottomNav(),
+      bottomNavigationBar: YellowBottomNav(),
       appBar: YellowAppBar(),
+      endDrawer: YellowDrawerNav(),
       body: Column(
         children: [
           // Header widget that stays at the top
