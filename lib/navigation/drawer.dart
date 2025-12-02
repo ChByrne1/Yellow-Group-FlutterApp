@@ -13,22 +13,66 @@ class YellowDrawerNav extends StatelessWidget {
         .uri
         .toString();
     return Drawer(
+      width: 200,
       child: ListView(
-        children: [
-          const UserAccountsDrawerHeader(
-            accountName: Text('John Doe'),
-            accountEmail: Text('john.doe@example.com'),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage('assets/profile.jpg'),
+        children: <Widget>[
+          UserAccountsDrawerHeader(
+            accountName: const Text("Name"),
+            accountEmail: const Text("Email"),
+            decoration: BoxDecoration(
+              color: Colors.amber,
+            ),
+            otherAccountsPictures: [
+              CircleAvatar(backgroundColor: Colors.amberAccent),
+            ],
+          ),
+          const SizedBox(
+            height: 70,
+            child: DrawerHeader(
+              decoration: BoxDecoration(color: Colors.greenAccent),
+              child: Text('Menu', style: TextStyle(fontSize: 24)),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text('About Us'),
-            onTap: () {
-              Navigator.pop(context); // Close drawer
-              context.go('/AboutUs'); // Navigate
-            },
+          ExpansionTile(
+            title: Text('Campus'),
+            children: <Widget>[
+              TextButton(
+                onPressed: () => context.go('/Cafeteria'),
+                child: Text("Cafeteria"),
+              ),
+              TextButton(
+                onPressed: () => context.go('/library'),
+                child: Text("Library"),
+              ),
+            ],
+          ),
+
+          ExpansionTile(
+            title: Text('Student Resources'),
+            children: <Widget>[
+
+            ],
+          ),
+
+          ExpansionTile(
+            title: Text('Administration'),
+            children: <Widget>[
+
+            ],
+          ),
+
+          ExpansionTile(
+            title: Text('Options'),
+            children: <Widget>[
+              TextButton(
+                onPressed: () => context.go('/AboutUs'),
+                child: Text("About WVUP"),
+              ),
+              TextButton(
+                onPressed: () => context.go('/AboutApp'),
+                child: Text("App Info"),
+              ),
+            ],
           ),
         ],
       ),
