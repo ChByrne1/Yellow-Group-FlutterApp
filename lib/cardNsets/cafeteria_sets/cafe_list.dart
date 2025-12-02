@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import '../librarySets/libraryCard.dart';
-import '../models/library.dart';
+import 'package:yellow_group_flutterapp/models/cafeteria_item.dart';
+import '../../models/overview.dart';
+import 'cafeteria_card.dart';
 
-class LibraryList extends StatelessWidget {
-  final List<Book> books;
+class CafeList extends StatelessWidget {
+  final List<CafeteriaItem> items;
 
-  const LibraryList({
+  const CafeList({
     super.key,
-    required this.books
+    required this.items
   });
 
   /*@override
@@ -31,9 +32,9 @@ class LibraryList extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
                   (context, index) =>
-                  libraryCard(book: books[index]
+                  cafeCard(item: items[index]
                   ),
-              childCount: books.length,
+              childCount: items.length,
             ),)
         ]);
   }

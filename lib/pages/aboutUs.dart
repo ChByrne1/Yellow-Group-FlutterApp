@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yellow_group_flutterapp/Theme/theme.dart';
-import 'package:yellow_group_flutterapp/navigation/overView.dart';
+import '../Theme/theme.dart';
+import '../navigation/overview.dart';
 
 class AboutUs extends StatelessWidget {
   const AboutUs({super.key});
@@ -9,17 +9,29 @@ class AboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageSetup = SchoolTheme.pageSetup();
     return Container(
-        color: pageSetup.appBarTheme.backgroundColor,
-        child:
-        SafeArea(
-            child: Scaffold(
-                appBar: YellowAppBar(),
-                bottomNavigationBar: YellowBottomNav(),
-                drawer: YellowDrawerNav()
-              //Everything can be put below here.
-              // body: ,
-            )
-        )
+      color: pageSetup.appBarTheme.backgroundColor,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: YellowAppBar(),
+          bottomNavigationBar: YellowBottomNav(),
+          drawer: YellowDrawerNav(),
+          body: ListView(
+            padding: const EdgeInsets.all(16),
+            children: const [
+              ListTile(
+                leading: Icon(Icons.info_outline),
+                title: Text(
+                  'About This Project',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                subtitle: Text(
+                  'This app was created to help streamline school communication and keep students updated with the latest news and events. It reflects teamwork, design, and functionality aimed at improving community engagement.',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

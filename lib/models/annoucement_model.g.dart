@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'cafeteria_item.dart';
+part of 'annoucement_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CafeteriaItemImpl _$$CafeteriaItemImplFromJson(Map<String, dynamic> json) =>
-    _$CafeteriaItemImpl(
+_$AnnoucementImpl _$$AnnoucementImplFromJson(Map<String, dynamic> json) =>
+    _$AnnoucementImpl(
       id: (json['id'] as num?)?.toInt(),
-      category: (json['category'] as num?)?.toInt(),
-      name: json['name'] as String?,
+      addressId: (json['addressId'] as num?)?.toInt(),
+      schoolId: (json['schoolId'] as num?)?.toInt(),
       description: json['description'] as String?,
       iconName: json['iconName'] as String?,
     );
 
-Map<String, dynamic> _$$CafeteriaItemImplToJson(_$CafeteriaItemImpl instance) =>
+Map<String, dynamic> _$$AnnoucementImplToJson(_$AnnoucementImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'category': instance.category,
-      'name': instance.name,
+      'addressId': instance.addressId,
+      'schoolId': instance.schoolId,
       'description': instance.description,
       'iconName': instance.iconName,
     };

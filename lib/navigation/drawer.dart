@@ -1,13 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yellow_group_flutterapp/theme/theme.dart';
+import '../Theme/theme.dart';
 
 class YellowDrawerNav extends StatelessWidget {
   const YellowDrawerNav({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final pageSetup = SchoolTheme.pageSetup();
+    String currentLocation = GoRouterState
+        .of(context)
+        .uri
+        .toString();
     return Drawer(
       width: 200,
       child: ListView(
