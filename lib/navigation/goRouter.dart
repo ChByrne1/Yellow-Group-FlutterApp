@@ -12,10 +12,6 @@ GoRouter(
       GoRoute(path: '/BulletinBoard',
           builder: (context, state) => BulletinBoardPage()
       ),
-          GoRoute(path: '/Sitemap',
-              builder: (context, state) =>SiteMap(),
-              name: 'Sitemap'
-          ),
       GoRoute(path: '/library',
           builder: (context, state) =>TestPage(),
             name: 'Library'

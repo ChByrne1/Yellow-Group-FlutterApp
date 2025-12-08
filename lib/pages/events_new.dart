@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/overview.dart';        // EventPost
-import '../../models/campus_model.dart';   // Campus, fetchCampuses
+// Campus, fetchCampuses
 import '../network/overview.dart';         // ApiClient, apiUrl
 
 class NewEventPage extends StatefulWidget {
@@ -164,7 +164,7 @@ class _NewEventPageState extends State<NewEventPage> {
                 decoration: const InputDecoration(labelText: 'Location'),
               ),
               DropdownButtonFormField<Campus>(
-                value: _selectedCampus,
+                initialValue: _selectedCampus,
                 items: _campuses
                     .map(
                       (c) => DropdownMenuItem(

@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../network/overview.dart';
-import 'overview.dart';
 
 part 'campus_model.g.dart';
 part 'campus_model.freezed.dart';
@@ -29,7 +28,7 @@ Future<List<Campus>> fetchCampuses() async {
   if (response.isSuccessful && response.body != null) {
     List<Map<String, dynamic>>? jsonList = response.body;
     List<Campus> items = jsonList!
-        .map((json) => Campus.fromJson(json as Map<String, dynamic>))
+        .map((json) => Campus.fromJson(json))
         .toList();
     return items;
   } else {

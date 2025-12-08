@@ -77,7 +77,7 @@ final menu = CafeteriaMenu(menuItems: [cafe]);
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<int>(
-                value: _category,
+                initialValue: _category,
                 decoration: const InputDecoration(labelText: 'Category'),
                 items: const [
                   DropdownMenuItem(value: 1, child: Text('Side')),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../Theme/theme.dart';
 
 //created once to be pulled into other pages
 
@@ -73,7 +72,7 @@ class YellowBottomNav extends StatelessWidget {
           ),
           IconButton(
             enableFeedback: false,
-            onPressed: () => Scaffold.of(context).openEndDrawer(),
+            onPressed: () => Scaffold.of(context).openDrawer(),
             icon:
             currentLocation == '/Sitemap'
                 ? const Icon(

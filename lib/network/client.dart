@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 
 import '../api/auth_interceptor.dart';
 import '../network/overview.dart';
-import 'overview.dart';
 import 'package:chopper/chopper.dart';
 
 
