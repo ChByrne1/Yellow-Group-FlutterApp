@@ -12,57 +12,83 @@ part of 'school_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
-School _$SchoolFromJson(Map<String, dynamic> json) {
-  return _School.fromJson(json);
+SchoolCall _$SchoolCallFromJson(Map<String, dynamic> json) {
+  return _SchoolCall.fromJson(json);
 }
 
 /// @nodoc
-mixin _$School {
+mixin _$SchoolCall {
+  @HiveField(0)
   int? get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get email => throw _privateConstructorUsedError;
+  @HiveField(3)
   String? get website => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get phoneNumber => throw _privateConstructorUsedError;
-  List<Annoucement>? get schoolAnnoucements =>
+  @HiveField(5)
+  List<AnnoucementCall>? get schoolAnnoucements =>
       throw _privateConstructorUsedError;
-  List<Campus>? get campuses => throw _privateConstructorUsedError;
+  @HiveField(6)
+  List<CampusCall>? get campuses => throw _privateConstructorUsedError;
+  @HiveField(7)
   List<EventCall>? get schoolEvents => throw _privateConstructorUsedError;
-  List<SchoolNews>? get schoolNews => throw _privateConstructorUsedError;
+  @HiveField(8)
+  List<NewsCall>? get schoolNews => throw _privateConstructorUsedError;
+  @HiveField(9)
+  int? get timestamp => throw _privateConstructorUsedError;
+  @HiveField(10)
+  bool? get isDeleted => throw _privateConstructorUsedError;
 
+  /// Serializes this SchoolCall to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SchoolCopyWith<School> get copyWith => throw _privateConstructorUsedError;
+
+  /// Create a copy of SchoolCall
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SchoolCallCopyWith<SchoolCall> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SchoolCopyWith<$Res> {
-  factory $SchoolCopyWith(School value, $Res Function(School) then) =
-      _$SchoolCopyWithImpl<$Res, School>;
+abstract class $SchoolCallCopyWith<$Res> {
+  factory $SchoolCallCopyWith(
+    SchoolCall value,
+    $Res Function(SchoolCall) then,
+  ) = _$SchoolCallCopyWithImpl<$Res, SchoolCall>;
   @useResult
-  $Res call(
-      {int? id,
-      String? name,
-      String? email,
-      String? website,
-      String? phoneNumber,
-      List<Annoucement>? schoolAnnoucements,
-      List<Campus>? campuses,
-      List<EventCall>? schoolEvents,
-      List<SchoolNews>? schoolNews});
+  $Res call({
+    @HiveField(0) int? id,
+    @HiveField(1) String? name,
+    @HiveField(2) String? email,
+    @HiveField(3) String? website,
+    @HiveField(4) String? phoneNumber,
+    @HiveField(5) List<AnnoucementCall>? schoolAnnoucements,
+    @HiveField(6) List<CampusCall>? campuses,
+    @HiveField(7) List<EventCall>? schoolEvents,
+    @HiveField(8) List<NewsCall>? schoolNews,
+    @HiveField(9) int? timestamp,
+    @HiveField(10) bool? isDeleted,
+  });
 }
 
 /// @nodoc
-class _$SchoolCopyWithImpl<$Res, $Val extends School>
-    implements $SchoolCopyWith<$Res> {
-  _$SchoolCopyWithImpl(this._value, this._then);
+class _$SchoolCallCopyWithImpl<$Res, $Val extends SchoolCall>
+    implements $SchoolCallCopyWith<$Res> {
+  _$SchoolCallCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SchoolCall
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,75 +101,107 @@ class _$SchoolCopyWithImpl<$Res, $Val extends School>
     Object? campuses = freezed,
     Object? schoolEvents = freezed,
     Object? schoolNews = freezed,
+    Object? timestamp = freezed,
+    Object? isDeleted = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schoolAnnoucements: freezed == schoolAnnoucements
-          ? _value.schoolAnnoucements
-          : schoolAnnoucements // ignore: cast_nullable_to_non_nullable
-              as List<Annoucement>?,
-      campuses: freezed == campuses
-          ? _value.campuses
-          : campuses // ignore: cast_nullable_to_non_nullable
-              as List<Campus>?,
-      schoolEvents: freezed == schoolEvents
-          ? _value.schoolEvents
-          : schoolEvents // ignore: cast_nullable_to_non_nullable
-              as List<EventCall>?,
-      schoolNews: freezed == schoolNews
-          ? _value.schoolNews
-          : schoolNews // ignore: cast_nullable_to_non_nullable
-              as List<SchoolNews>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            email:
+                freezed == email
+                    ? _value.email
+                    : email // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            website:
+                freezed == website
+                    ? _value.website
+                    : website // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            phoneNumber:
+                freezed == phoneNumber
+                    ? _value.phoneNumber
+                    : phoneNumber // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            schoolAnnoucements:
+                freezed == schoolAnnoucements
+                    ? _value.schoolAnnoucements
+                    : schoolAnnoucements // ignore: cast_nullable_to_non_nullable
+                        as List<AnnoucementCall>?,
+            campuses:
+                freezed == campuses
+                    ? _value.campuses
+                    : campuses // ignore: cast_nullable_to_non_nullable
+                        as List<CampusCall>?,
+            schoolEvents:
+                freezed == schoolEvents
+                    ? _value.schoolEvents
+                    : schoolEvents // ignore: cast_nullable_to_non_nullable
+                        as List<EventCall>?,
+            schoolNews:
+                freezed == schoolNews
+                    ? _value.schoolNews
+                    : schoolNews // ignore: cast_nullable_to_non_nullable
+                        as List<NewsCall>?,
+            timestamp:
+                freezed == timestamp
+                    ? _value.timestamp
+                    : timestamp // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            isDeleted:
+                freezed == isDeleted
+                    ? _value.isDeleted
+                    : isDeleted // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
-abstract class _$$SchoolImplCopyWith<$Res> implements $SchoolCopyWith<$Res> {
-  factory _$$SchoolImplCopyWith(
-          _$SchoolImpl value, $Res Function(_$SchoolImpl) then) =
-      __$$SchoolImplCopyWithImpl<$Res>;
+abstract class _$$SchoolCallImplCopyWith<$Res>
+    implements $SchoolCallCopyWith<$Res> {
+  factory _$$SchoolCallImplCopyWith(
+    _$SchoolCallImpl value,
+    $Res Function(_$SchoolCallImpl) then,
+  ) = __$$SchoolCallImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int? id,
-      String? name,
-      String? email,
-      String? website,
-      String? phoneNumber,
-      List<Annoucement>? schoolAnnoucements,
-      List<Campus>? campuses,
-      List<EventCall>? schoolEvents,
-      List<SchoolNews>? schoolNews});
+  $Res call({
+    @HiveField(0) int? id,
+    @HiveField(1) String? name,
+    @HiveField(2) String? email,
+    @HiveField(3) String? website,
+    @HiveField(4) String? phoneNumber,
+    @HiveField(5) List<AnnoucementCall>? schoolAnnoucements,
+    @HiveField(6) List<CampusCall>? campuses,
+    @HiveField(7) List<EventCall>? schoolEvents,
+    @HiveField(8) List<NewsCall>? schoolNews,
+    @HiveField(9) int? timestamp,
+    @HiveField(10) bool? isDeleted,
+  });
 }
 
 /// @nodoc
-class __$$SchoolImplCopyWithImpl<$Res>
-    extends _$SchoolCopyWithImpl<$Res, _$SchoolImpl>
-    implements _$$SchoolImplCopyWith<$Res> {
-  __$$SchoolImplCopyWithImpl(
-      _$SchoolImpl _value, $Res Function(_$SchoolImpl) _then)
-      : super(_value, _then);
+class __$$SchoolCallImplCopyWithImpl<$Res>
+    extends _$SchoolCallCopyWithImpl<$Res, _$SchoolCallImpl>
+    implements _$$SchoolCallImplCopyWith<$Res> {
+  __$$SchoolCallImplCopyWithImpl(
+    _$SchoolCallImpl _value,
+    $Res Function(_$SchoolCallImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SchoolCall
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,82 +214,114 @@ class __$$SchoolImplCopyWithImpl<$Res>
     Object? campuses = freezed,
     Object? schoolEvents = freezed,
     Object? schoolNews = freezed,
+    Object? timestamp = freezed,
+    Object? isDeleted = freezed,
   }) {
-    return _then(_$SchoolImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schoolAnnoucements: freezed == schoolAnnoucements
-          ? _value._schoolAnnoucements
-          : schoolAnnoucements // ignore: cast_nullable_to_non_nullable
-              as List<Annoucement>?,
-      campuses: freezed == campuses
-          ? _value._campuses
-          : campuses // ignore: cast_nullable_to_non_nullable
-              as List<Campus>?,
-      schoolEvents: freezed == schoolEvents
-          ? _value._schoolEvents
-          : schoolEvents // ignore: cast_nullable_to_non_nullable
-              as List<EventCall>?,
-      schoolNews: freezed == schoolNews
-          ? _value._schoolNews
-          : schoolNews // ignore: cast_nullable_to_non_nullable
-              as List<SchoolNews>?,
-    ));
+    return _then(
+      _$SchoolCallImpl(
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        email:
+            freezed == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        website:
+            freezed == website
+                ? _value.website
+                : website // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        phoneNumber:
+            freezed == phoneNumber
+                ? _value.phoneNumber
+                : phoneNumber // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        schoolAnnoucements:
+            freezed == schoolAnnoucements
+                ? _value._schoolAnnoucements
+                : schoolAnnoucements // ignore: cast_nullable_to_non_nullable
+                    as List<AnnoucementCall>?,
+        campuses:
+            freezed == campuses
+                ? _value._campuses
+                : campuses // ignore: cast_nullable_to_non_nullable
+                    as List<CampusCall>?,
+        schoolEvents:
+            freezed == schoolEvents
+                ? _value._schoolEvents
+                : schoolEvents // ignore: cast_nullable_to_non_nullable
+                    as List<EventCall>?,
+        schoolNews:
+            freezed == schoolNews
+                ? _value._schoolNews
+                : schoolNews // ignore: cast_nullable_to_non_nullable
+                    as List<NewsCall>?,
+        timestamp:
+            freezed == timestamp
+                ? _value.timestamp
+                : timestamp // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        isDeleted:
+            freezed == isDeleted
+                ? _value.isDeleted
+                : isDeleted // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$SchoolImpl implements _School {
-  const _$SchoolImpl(
-      {this.id,
-      this.name,
-      this.email,
-      this.website,
-      this.phoneNumber,
-      final List<Annoucement>? schoolAnnoucements,
-      final List<Campus>? campuses,
-      final List<EventCall>? schoolEvents,
-      final List<SchoolNews>? schoolNews})
-      : _schoolAnnoucements = schoolAnnoucements,
-        _campuses = campuses,
-        _schoolEvents = schoolEvents,
-        _schoolNews = schoolNews;
+class _$SchoolCallImpl extends _SchoolCall {
+  _$SchoolCallImpl({
+    @HiveField(0) this.id,
+    @HiveField(1) this.name,
+    @HiveField(2) this.email,
+    @HiveField(3) this.website,
+    @HiveField(4) this.phoneNumber,
+    @HiveField(5) final List<AnnoucementCall>? schoolAnnoucements,
+    @HiveField(6) final List<CampusCall>? campuses,
+    @HiveField(7) final List<EventCall>? schoolEvents,
+    @HiveField(8) final List<NewsCall>? schoolNews,
+    @HiveField(9) this.timestamp,
+    @HiveField(10) this.isDeleted,
+  }) : _schoolAnnoucements = schoolAnnoucements,
+       _campuses = campuses,
+       _schoolEvents = schoolEvents,
+       _schoolNews = schoolNews,
+       super._();
 
-  factory _$SchoolImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SchoolImplFromJson(json);
+  factory _$SchoolCallImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SchoolCallImplFromJson(json);
 
   @override
+  @HiveField(0)
   final int? id;
   @override
+  @HiveField(1)
   final String? name;
   @override
+  @HiveField(2)
   final String? email;
   @override
+  @HiveField(3)
   final String? website;
   @override
+  @HiveField(4)
   final String? phoneNumber;
-  final List<Annoucement>? _schoolAnnoucements;
+  final List<AnnoucementCall>? _schoolAnnoucements;
   @override
-  List<Annoucement>? get schoolAnnoucements {
+  @HiveField(5)
+  List<AnnoucementCall>? get schoolAnnoucements {
     final value = _schoolAnnoucements;
     if (value == null) return null;
     if (_schoolAnnoucements is EqualUnmodifiableListView)
@@ -240,9 +330,10 @@ class _$SchoolImpl implements _School {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Campus>? _campuses;
+  final List<CampusCall>? _campuses;
   @override
-  List<Campus>? get campuses {
+  @HiveField(6)
+  List<CampusCall>? get campuses {
     final value = _campuses;
     if (value == null) return null;
     if (_campuses is EqualUnmodifiableListView) return _campuses;
@@ -252,6 +343,7 @@ class _$SchoolImpl implements _School {
 
   final List<EventCall>? _schoolEvents;
   @override
+  @HiveField(7)
   List<EventCall>? get schoolEvents {
     final value = _schoolEvents;
     if (value == null) return null;
@@ -260,9 +352,10 @@ class _$SchoolImpl implements _School {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<SchoolNews>? _schoolNews;
+  final List<NewsCall>? _schoolNews;
   @override
-  List<SchoolNews>? get schoolNews {
+  @HiveField(8)
+  List<NewsCall>? get schoolNews {
     final value = _schoolNews;
     if (value == null) return null;
     if (_schoolNews is EqualUnmodifiableListView) return _schoolNews;
@@ -271,92 +364,135 @@ class _$SchoolImpl implements _School {
   }
 
   @override
+  @HiveField(9)
+  final int? timestamp;
+  @override
+  @HiveField(10)
+  final bool? isDeleted;
+
+  @override
   String toString() {
-    return 'School(id: $id, name: $name, email: $email, website: $website, phoneNumber: $phoneNumber, schoolAnnoucements: $schoolAnnoucements, campuses: $campuses, schoolEvents: $schoolEvents, schoolNews: $schoolNews)';
+    return 'SchoolCall(id: $id, name: $name, email: $email, website: $website, phoneNumber: $phoneNumber, schoolAnnoucements: $schoolAnnoucements, campuses: $campuses, schoolEvents: $schoolEvents, schoolNews: $schoolNews, timestamp: $timestamp, isDeleted: $isDeleted)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SchoolImpl &&
+            other is _$SchoolCallImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.website, website) || other.website == website) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            const DeepCollectionEquality()
-                .equals(other._schoolAnnoucements, _schoolAnnoucements) &&
+            const DeepCollectionEquality().equals(
+              other._schoolAnnoucements,
+              _schoolAnnoucements,
+            ) &&
             const DeepCollectionEquality().equals(other._campuses, _campuses) &&
-            const DeepCollectionEquality()
-                .equals(other._schoolEvents, _schoolEvents) &&
-            const DeepCollectionEquality()
-                .equals(other._schoolNews, _schoolNews));
+            const DeepCollectionEquality().equals(
+              other._schoolEvents,
+              _schoolEvents,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._schoolNews,
+              _schoolNews,
+            ) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.isDeleted, isDeleted) ||
+                other.isDeleted == isDeleted));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      email,
-      website,
-      phoneNumber,
-      const DeepCollectionEquality().hash(_schoolAnnoucements),
-      const DeepCollectionEquality().hash(_campuses),
-      const DeepCollectionEquality().hash(_schoolEvents),
-      const DeepCollectionEquality().hash(_schoolNews));
+    runtimeType,
+    id,
+    name,
+    email,
+    website,
+    phoneNumber,
+    const DeepCollectionEquality().hash(_schoolAnnoucements),
+    const DeepCollectionEquality().hash(_campuses),
+    const DeepCollectionEquality().hash(_schoolEvents),
+    const DeepCollectionEquality().hash(_schoolNews),
+    timestamp,
+    isDeleted,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SchoolCall
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SchoolImplCopyWith<_$SchoolImpl> get copyWith =>
-      __$$SchoolImplCopyWithImpl<_$SchoolImpl>(this, _$identity);
+  _$$SchoolCallImplCopyWith<_$SchoolCallImpl> get copyWith =>
+      __$$SchoolCallImplCopyWithImpl<_$SchoolCallImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchoolImplToJson(
-      this,
-    );
+    return _$$SchoolCallImplToJson(this);
   }
 }
 
-abstract class _School implements School {
-  const factory _School(
-      {final int? id,
-      final String? name,
-      final String? email,
-      final String? website,
-      final String? phoneNumber,
-      final List<Annoucement>? schoolAnnoucements,
-      final List<Campus>? campuses,
-      final List<EventCall>? schoolEvents,
-      final List<SchoolNews>? schoolNews}) = _$SchoolImpl;
+abstract class _SchoolCall extends SchoolCall {
+  factory _SchoolCall({
+    @HiveField(0) final int? id,
+    @HiveField(1) final String? name,
+    @HiveField(2) final String? email,
+    @HiveField(3) final String? website,
+    @HiveField(4) final String? phoneNumber,
+    @HiveField(5) final List<AnnoucementCall>? schoolAnnoucements,
+    @HiveField(6) final List<CampusCall>? campuses,
+    @HiveField(7) final List<EventCall>? schoolEvents,
+    @HiveField(8) final List<NewsCall>? schoolNews,
+    @HiveField(9) final int? timestamp,
+    @HiveField(10) final bool? isDeleted,
+  }) = _$SchoolCallImpl;
+  _SchoolCall._() : super._();
 
-  factory _School.fromJson(Map<String, dynamic> json) = _$SchoolImpl.fromJson;
+  factory _SchoolCall.fromJson(Map<String, dynamic> json) =
+      _$SchoolCallImpl.fromJson;
 
   @override
+  @HiveField(0)
   int? get id;
   @override
+  @HiveField(1)
   String? get name;
   @override
+  @HiveField(2)
   String? get email;
   @override
+  @HiveField(3)
   String? get website;
   @override
+  @HiveField(4)
   String? get phoneNumber;
   @override
-  List<Annoucement>? get schoolAnnoucements;
+  @HiveField(5)
+  List<AnnoucementCall>? get schoolAnnoucements;
   @override
-  List<Campus>? get campuses;
+  @HiveField(6)
+  List<CampusCall>? get campuses;
   @override
+  @HiveField(7)
   List<EventCall>? get schoolEvents;
   @override
-  List<SchoolNews>? get schoolNews;
+  @HiveField(8)
+  List<NewsCall>? get schoolNews;
   @override
-  @JsonKey(ignore: true)
-  _$$SchoolImplCopyWith<_$SchoolImpl> get copyWith =>
+  @HiveField(9)
+  int? get timestamp;
+  @override
+  @HiveField(10)
+  bool? get isDeleted;
+
+  /// Create a copy of SchoolCall
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SchoolCallImplCopyWith<_$SchoolCallImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

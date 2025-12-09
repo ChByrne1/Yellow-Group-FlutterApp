@@ -12,7 +12,8 @@ part of 'cafeteria_special.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 CafeteriaSpecial _$CafeteriaSpecialFromJson(Map<String, dynamic> json) {
   return _CafeteriaSpecial.fromJson(json);
@@ -23,8 +24,12 @@ mixin _$CafeteriaSpecial {
   DayOfWeek get dayOfTheWeek => throw _privateConstructorUsedError;
   String get imagePath => throw _privateConstructorUsedError;
 
+  /// Serializes this CafeteriaSpecial to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CafeteriaSpecial
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CafeteriaSpecialCopyWith<CafeteriaSpecial> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -32,8 +37,9 @@ mixin _$CafeteriaSpecial {
 /// @nodoc
 abstract class $CafeteriaSpecialCopyWith<$Res> {
   factory $CafeteriaSpecialCopyWith(
-          CafeteriaSpecial value, $Res Function(CafeteriaSpecial) then) =
-      _$CafeteriaSpecialCopyWithImpl<$Res, CafeteriaSpecial>;
+    CafeteriaSpecial value,
+    $Res Function(CafeteriaSpecial) then,
+  ) = _$CafeteriaSpecialCopyWithImpl<$Res, CafeteriaSpecial>;
   @useResult
   $Res call({DayOfWeek dayOfTheWeek, String imagePath});
 }
@@ -48,31 +54,36 @@ class _$CafeteriaSpecialCopyWithImpl<$Res, $Val extends CafeteriaSpecial>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CafeteriaSpecial
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? dayOfTheWeek = null,
-    Object? imagePath = null,
-  }) {
-    return _then(_value.copyWith(
-      dayOfTheWeek: null == dayOfTheWeek
-          ? _value.dayOfTheWeek
-          : dayOfTheWeek // ignore: cast_nullable_to_non_nullable
-              as DayOfWeek,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? dayOfTheWeek = null, Object? imagePath = null}) {
+    return _then(
+      _value.copyWith(
+            dayOfTheWeek:
+                null == dayOfTheWeek
+                    ? _value.dayOfTheWeek
+                    : dayOfTheWeek // ignore: cast_nullable_to_non_nullable
+                        as DayOfWeek,
+            imagePath:
+                null == imagePath
+                    ? _value.imagePath
+                    : imagePath // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$CafeteriaSpecialImplCopyWith<$Res>
     implements $CafeteriaSpecialCopyWith<$Res> {
-  factory _$$CafeteriaSpecialImplCopyWith(_$CafeteriaSpecialImpl value,
-          $Res Function(_$CafeteriaSpecialImpl) then) =
-      __$$CafeteriaSpecialImplCopyWithImpl<$Res>;
+  factory _$$CafeteriaSpecialImplCopyWith(
+    _$CafeteriaSpecialImpl value,
+    $Res Function(_$CafeteriaSpecialImpl) then,
+  ) = __$$CafeteriaSpecialImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({DayOfWeek dayOfTheWeek, String imagePath});
@@ -82,34 +93,40 @@ abstract class _$$CafeteriaSpecialImplCopyWith<$Res>
 class __$$CafeteriaSpecialImplCopyWithImpl<$Res>
     extends _$CafeteriaSpecialCopyWithImpl<$Res, _$CafeteriaSpecialImpl>
     implements _$$CafeteriaSpecialImplCopyWith<$Res> {
-  __$$CafeteriaSpecialImplCopyWithImpl(_$CafeteriaSpecialImpl _value,
-      $Res Function(_$CafeteriaSpecialImpl) _then)
-      : super(_value, _then);
+  __$$CafeteriaSpecialImplCopyWithImpl(
+    _$CafeteriaSpecialImpl _value,
+    $Res Function(_$CafeteriaSpecialImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of CafeteriaSpecial
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? dayOfTheWeek = null,
-    Object? imagePath = null,
-  }) {
-    return _then(_$CafeteriaSpecialImpl(
-      dayOfTheWeek: null == dayOfTheWeek
-          ? _value.dayOfTheWeek
-          : dayOfTheWeek // ignore: cast_nullable_to_non_nullable
-              as DayOfWeek,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? dayOfTheWeek = null, Object? imagePath = null}) {
+    return _then(
+      _$CafeteriaSpecialImpl(
+        dayOfTheWeek:
+            null == dayOfTheWeek
+                ? _value.dayOfTheWeek
+                : dayOfTheWeek // ignore: cast_nullable_to_non_nullable
+                    as DayOfWeek,
+        imagePath:
+            null == imagePath
+                ? _value.imagePath
+                : imagePath // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CafeteriaSpecialImpl implements _CafeteriaSpecial {
-  const _$CafeteriaSpecialImpl(
-      {required this.dayOfTheWeek, required this.imagePath});
+  const _$CafeteriaSpecialImpl({
+    required this.dayOfTheWeek,
+    required this.imagePath,
+  });
 
   factory _$CafeteriaSpecialImpl.fromJson(Map<String, dynamic> json) =>
       _$$CafeteriaSpecialImplFromJson(json);
@@ -135,29 +152,32 @@ class _$CafeteriaSpecialImpl implements _CafeteriaSpecial {
                 other.imagePath == imagePath));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, dayOfTheWeek, imagePath);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CafeteriaSpecial
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CafeteriaSpecialImplCopyWith<_$CafeteriaSpecialImpl> get copyWith =>
       __$$CafeteriaSpecialImplCopyWithImpl<_$CafeteriaSpecialImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CafeteriaSpecialImplToJson(
-      this,
-    );
+    return _$$CafeteriaSpecialImplToJson(this);
   }
 }
 
 abstract class _CafeteriaSpecial implements CafeteriaSpecial {
-  const factory _CafeteriaSpecial(
-      {required final DayOfWeek dayOfTheWeek,
-      required final String imagePath}) = _$CafeteriaSpecialImpl;
+  const factory _CafeteriaSpecial({
+    required final DayOfWeek dayOfTheWeek,
+    required final String imagePath,
+  }) = _$CafeteriaSpecialImpl;
 
   factory _CafeteriaSpecial.fromJson(Map<String, dynamic> json) =
       _$CafeteriaSpecialImpl.fromJson;
@@ -166,8 +186,11 @@ abstract class _CafeteriaSpecial implements CafeteriaSpecial {
   DayOfWeek get dayOfTheWeek;
   @override
   String get imagePath;
+
+  /// Create a copy of CafeteriaSpecial
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CafeteriaSpecialImplCopyWith<_$CafeteriaSpecialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

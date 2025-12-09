@@ -4,11 +4,6 @@ import 'package:flutter/material.dart';
 //https://www.geeksforgeeks.org/flutter/flutter-themes/#
 //https://medium.com/@kanellopoulos.leo/a-simple-way-to-organize-your-styles-themes-in-flutter-a0e7eba5b297
 
-//To Use Theme:
-//Import on the page with - import 'theme.dart';
-//In the intial build use - theme: pageSetup
-//when specifying a text use - Theme.of(context).textTheme.bodyMedium
-//Will add more when getting more into the application
 
 class SchoolTheme {
   //Colors
@@ -24,6 +19,8 @@ class SchoolTheme {
     primaryContainer: Colors.white,
     secondaryContainer: Colors.black,
   );
+
+  //Text Styles
 
   static TextTheme textTheme() {
     return TextTheme(
@@ -51,6 +48,7 @@ class SchoolTheme {
     );
   }
 
+  //Actual Theme Data
   static ThemeData pageSetup() {
     return ThemeData(
       brightness: Brightness.light,
@@ -74,31 +72,31 @@ class SchoolTheme {
         focusColor: optionalColor,
       ),
       drawerTheme: DrawerThemeData(
-          backgroundColor: primaryColor, shadowColor: Colors.black
+        backgroundColor: primaryColor,
+        shadowColor: Colors.black,
       ),
       expansionTileTheme: ExpansionTileThemeData(
-        backgroundColor: secondaryColor,
-        iconColor: Colors.white
+        collapsedBackgroundColor: primaryColor,
+        backgroundColor: primaryColor,
+        iconColor: Colors.white,
+        collapsedIconColor: Colors.white,
+        textColor: Colors.white,
+        collapsedTextColor: Colors.white,
       ),
-     /* elevatedButtonTheme: ElevatedButtonThemeData(
+      /* elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
               backgroundColor: secondaryColor,
               shadowColor: optionalColor)*/
-
 
       //)
     );
   }
 
-
   static ThemeData secondarySetup() {
     return ThemeData(
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: secondaryColor
-      )
+        backgroundColor: secondaryColor,
+      ),
     );
-
   }
-
-
 }

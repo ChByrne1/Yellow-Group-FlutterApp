@@ -7,18 +7,18 @@ part of 'cafeteria_special.dart';
 // **************************************************************************
 
 _$CafeteriaSpecialImpl _$$CafeteriaSpecialImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CafeteriaSpecialImpl(
-      dayOfTheWeek: $enumDecode(_$DayOfWeekEnumMap, json['dayOfTheWeek']),
-      imagePath: json['imagePath'] as String,
-    );
+  Map<String, dynamic> json,
+) => _$CafeteriaSpecialImpl(
+  dayOfTheWeek: $enumDecode(_$DayOfWeekEnumMap, json['dayOfTheWeek']),
+  imagePath: json['imagePath'] as String,
+);
 
 Map<String, dynamic> _$$CafeteriaSpecialImplToJson(
-        _$CafeteriaSpecialImpl instance) =>
-    <String, dynamic>{
-      'dayOfTheWeek': _$DayOfWeekEnumMap[instance.dayOfTheWeek]!,
-      'imagePath': instance.imagePath,
-    };
+  _$CafeteriaSpecialImpl instance,
+) => <String, dynamic>{
+  'dayOfTheWeek': _$DayOfWeekEnumMap[instance.dayOfTheWeek]!,
+  'imagePath': instance.imagePath,
+};
 
 const _$DayOfWeekEnumMap = {
   DayOfWeek.Monday: 'Monday',

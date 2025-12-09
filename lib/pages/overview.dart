@@ -1,6 +1,7 @@
-export 'aboutApp.dart';
-export 'aboutUs.dart';
-export 'bulletinBoard.dart';
-export 'sitemap.dart';
-export 'library.dart';
-export 'Cafeteria.dart';
+export 'home_page.dart';
+export 'about_app.dart';
+export 'about_us.dart';
+export 'news.dart';
+export 'profile.dart';
+export 'site_map.dart';
+export 'splash.dart';

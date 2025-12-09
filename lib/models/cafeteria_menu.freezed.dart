@@ -12,7 +12,8 @@ part of 'cafeteria_menu.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 CafeteriaMenu _$CafeteriaMenuFromJson(Map<String, dynamic> json) {
   return _CafeteriaMenu.fromJson(json);
@@ -22,8 +23,12 @@ CafeteriaMenu _$CafeteriaMenuFromJson(Map<String, dynamic> json) {
 mixin _$CafeteriaMenu {
   List<CafeteriaItem> get menuItems => throw _privateConstructorUsedError;
 
+  /// Serializes this CafeteriaMenu to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CafeteriaMenu
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CafeteriaMenuCopyWith<CafeteriaMenu> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -31,8 +36,9 @@ mixin _$CafeteriaMenu {
 /// @nodoc
 abstract class $CafeteriaMenuCopyWith<$Res> {
   factory $CafeteriaMenuCopyWith(
-          CafeteriaMenu value, $Res Function(CafeteriaMenu) then) =
-      _$CafeteriaMenuCopyWithImpl<$Res, CafeteriaMenu>;
+    CafeteriaMenu value,
+    $Res Function(CafeteriaMenu) then,
+  ) = _$CafeteriaMenuCopyWithImpl<$Res, CafeteriaMenu>;
   @useResult
   $Res call({List<CafeteriaItem> menuItems});
 }
@@ -47,17 +53,21 @@ class _$CafeteriaMenuCopyWithImpl<$Res, $Val extends CafeteriaMenu>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CafeteriaMenu
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? menuItems = null,
-  }) {
-    return _then(_value.copyWith(
-      menuItems: null == menuItems
-          ? _value.menuItems
-          : menuItems // ignore: cast_nullable_to_non_nullable
-              as List<CafeteriaItem>,
-    ) as $Val);
+  $Res call({Object? menuItems = null}) {
+    return _then(
+      _value.copyWith(
+            menuItems:
+                null == menuItems
+                    ? _value.menuItems
+                    : menuItems // ignore: cast_nullable_to_non_nullable
+                        as List<CafeteriaItem>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -65,8 +75,9 @@ class _$CafeteriaMenuCopyWithImpl<$Res, $Val extends CafeteriaMenu>
 abstract class _$$CafeteriaMenuImplCopyWith<$Res>
     implements $CafeteriaMenuCopyWith<$Res> {
   factory _$$CafeteriaMenuImplCopyWith(
-          _$CafeteriaMenuImpl value, $Res Function(_$CafeteriaMenuImpl) then) =
-      __$$CafeteriaMenuImplCopyWithImpl<$Res>;
+    _$CafeteriaMenuImpl value,
+    $Res Function(_$CafeteriaMenuImpl) then,
+  ) = __$$CafeteriaMenuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<CafeteriaItem> menuItems});
@@ -77,20 +88,24 @@ class __$$CafeteriaMenuImplCopyWithImpl<$Res>
     extends _$CafeteriaMenuCopyWithImpl<$Res, _$CafeteriaMenuImpl>
     implements _$$CafeteriaMenuImplCopyWith<$Res> {
   __$$CafeteriaMenuImplCopyWithImpl(
-      _$CafeteriaMenuImpl _value, $Res Function(_$CafeteriaMenuImpl) _then)
-      : super(_value, _then);
+    _$CafeteriaMenuImpl _value,
+    $Res Function(_$CafeteriaMenuImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of CafeteriaMenu
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? menuItems = null,
-  }) {
-    return _then(_$CafeteriaMenuImpl(
-      menuItems: null == menuItems
-          ? _value._menuItems
-          : menuItems // ignore: cast_nullable_to_non_nullable
-              as List<CafeteriaItem>,
-    ));
+  $Res call({Object? menuItems = null}) {
+    return _then(
+      _$CafeteriaMenuImpl(
+        menuItems:
+            null == menuItems
+                ? _value._menuItems
+                : menuItems // ignore: cast_nullable_to_non_nullable
+                    as List<CafeteriaItem>,
+      ),
+    );
   }
 }
 
@@ -98,7 +113,7 @@ class __$$CafeteriaMenuImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CafeteriaMenuImpl implements _CafeteriaMenu {
   const _$CafeteriaMenuImpl({final List<CafeteriaItem> menuItems = const []})
-      : _menuItems = menuItems;
+    : _menuItems = menuItems;
 
   factory _$CafeteriaMenuImpl.fromJson(Map<String, dynamic> json) =>
       _$$CafeteriaMenuImplFromJson(json);
@@ -122,16 +137,20 @@ class _$CafeteriaMenuImpl implements _CafeteriaMenu {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CafeteriaMenuImpl &&
-            const DeepCollectionEquality()
-                .equals(other._menuItems, _menuItems));
+            const DeepCollectionEquality().equals(
+              other._menuItems,
+              _menuItems,
+            ));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_menuItems));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CafeteriaMenu
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CafeteriaMenuImplCopyWith<_$CafeteriaMenuImpl> get copyWith =>
@@ -139,9 +158,7 @@ class _$CafeteriaMenuImpl implements _CafeteriaMenu {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CafeteriaMenuImplToJson(
-      this,
-    );
+    return _$$CafeteriaMenuImplToJson(this);
   }
 }
 
@@ -154,8 +171,11 @@ abstract class _CafeteriaMenu implements CafeteriaMenu {
 
   @override
   List<CafeteriaItem> get menuItems;
+
+  /// Create a copy of CafeteriaMenu
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CafeteriaMenuImplCopyWith<_$CafeteriaMenuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
