@@ -4,7 +4,7 @@ import '../models/event_item.dart';
 import '../models/news.dart';
 
 class ApiService {
-  static const String baseUrl = 'https://your-api-url.com/api';
+  static const String baseUrl = 'http://localhost:5153';
 
   // Fetch events from API
   Future<List<EventItem>> fetchEvents() async {

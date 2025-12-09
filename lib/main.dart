@@ -7,6 +7,7 @@ import 'models/event_item.dart';
 import 'models/news.dart';
 import 'models/cafeteria_item.dart';
 import '../repositories/news_repository.dart';
+import 'services/auth_service.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 void main() async {
@@ -28,6 +29,9 @@ void main() async {
   await Hive.openBox<EventItem>('events');
   await Hive.openBox<SchoolNews>('news');
   await Hive.openBox<CafeteriaItem>('cafeteria');
+
+  final authService = AuthService();
+  await authService.initialize();
   runApp(const MyApp());
 }
 
