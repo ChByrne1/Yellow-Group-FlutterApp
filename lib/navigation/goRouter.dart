@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
+import 'package:yellow_group_flutterapp/pages/CafeteriaPage.dart';
 import '../main.dart';
 import '../pages/overview.dart';
-
+import '../pages/news_page.dart';
 final GoRouter routes =
 GoRouter(
     initialLocation: '/',
@@ -9,8 +10,8 @@ GoRouter(
       GoRoute(path: '/',
           builder: (context, state) =>HomePage()
       ),
-      GoRoute(path: '/BulletinBoard',
-          builder: (context, state) => BulletinBoardPage()
+      GoRoute(path: '/News',
+          builder: (context, state) => NewsPage()
       ),
           GoRoute(path: '/Sitemap',
               builder: (context, state) =>SiteMap(),
@@ -19,11 +20,11 @@ GoRouter(
      /* GoRoute(path: '/library',
           builder: (context, state) =>LibraryPage(),
             name: 'Library'
-      ),
-      GoRoute(path: '/Cafeteria',
-          builder: (context, state) =>Cafeteria(),
-          name: 'Cafeteria'
       ),*/
+      GoRoute(path: '/Cafeteria',
+          builder: (context, state) =>CafeteriaPage(),
+          name: 'Cafeteria'
+      ),
       GoRoute(path: '/AboutUs',
           builder: (context, state) =>AboutUs(),
           name: 'AboutUs'

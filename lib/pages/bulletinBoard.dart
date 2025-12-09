@@ -41,38 +41,6 @@ class BulletinBoardPage extends StatelessWidget {
       body: Column(
         children: [
           // Header widget that stays at the top
-          Container(
-            //color: pageSetup.primaryColor,
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-            child: Row(
-              children: [
-                // Logo
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage('assets/school_logo.png'),
-                  backgroundColor: Colors.white,
-                ),
-                const SizedBox(width: 12),
-
-                // School name and title
-            Flexible(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-
-                    Text(
-                      '📢 School Bulletin Board',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white70,
-                      ),
-                    ),
-                  ],
-                )
-            ),
-              ],
-            ),
-          ),
 
           // Expanded list view of news items
           Expanded(

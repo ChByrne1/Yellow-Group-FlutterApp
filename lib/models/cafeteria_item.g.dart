@@ -3,29 +3,54 @@
 part of 'cafeteria_item.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// TypeAdapterGenerator
 // **************************************************************************
 
-_$CafeteriaItemImpl _$$CafeteriaItemImplFromJson(Map<String, dynamic> json) =>
-    _$CafeteriaItemImpl(
-      id: (json['id'] as num?)?.toInt(),
-      Title: json['Title'] as String?,
-      Description: json['Description'] as String?,
-      Start: json['Start'] == null
-          ? null
-          : DateTime.parse(json['Start'] as String),
-      End: json['End'] == null ? null : DateTime.parse(json['End'] as String),
-      CampusId: (json['CampusId'] as num?)?.toInt(),
-      Location: json['Location'] as String?,
-    );
+class CafeteriaItemAdapter extends TypeAdapter<CafeteriaItem> {
+  @override
+  final typeId = 2;
 
-Map<String, dynamic> _$$CafeteriaItemImplToJson(_$CafeteriaItemImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'Title': instance.Title,
-      'Description': instance.Description,
-      'Start': instance.Start?.toIso8601String(),
-      'End': instance.End?.toIso8601String(),
-      'CampusId': instance.CampusId,
-      'Location': instance.Location,
+  @override
+  CafeteriaItem read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
+    return CafeteriaItem(
+      id: (fields[0] as num).toInt(),
+      name: fields[1] as String,
+      description: fields[2] as String,
+      price: (fields[3] as num).toDouble(),
+      category: fields[4] as String,
+      isAvailable: fields[5] == null ? true : fields[5] as bool,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, CafeteriaItem obj) {
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.description)
+      ..writeByte(3)
+      ..write(obj.price)
+      ..writeByte(4)
+      ..write(obj.category)
+      ..writeByte(5)
+      ..write(obj.isAvailable);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CafeteriaItemAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

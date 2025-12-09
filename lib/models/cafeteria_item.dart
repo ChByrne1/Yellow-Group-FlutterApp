@@ -1,24 +1,35 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/material.dart';
+import 'package:hive_ce/hive.dart';
 
+// Simple Cafeteria Item Model
 part 'cafeteria_item.g.dart';
 
-part 'cafeteria_item.freezed.dart';
+@HiveType(typeId: 2)
+class CafeteriaItem extends HiveObject {
+  @HiveField(0)
+  int id;
 
-enum MenuCategory { side, drink, appetizer }
+  @HiveField(1)
+  String name;
 
-@freezed
-class CafeteriaItem with _$CafeteriaItem {
-  const factory CafeteriaItem({
-    int? id,
-    String? Title,
-    String? Description,
-    DateTime? Start,
-    DateTime? End,
-    int? CampusId,
-    String? Location,
-  }) = _CafeteriaItem;
+  @HiveField(2)
+  String description;
 
-  // Create a Ingredient from JSON data
-  factory CafeteriaItem.fromJson(Map<String, dynamic> json) =>
-      _$CafeteriaItemFromJson(json);
+  @HiveField(3)
+  double price;
+
+  @HiveField(4)
+  String category;
+
+  @HiveField(5)
+  bool isAvailable;
+
+  CafeteriaItem({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.price,
+    required this.category,
+    this.isAvailable = true,
+  });
 }

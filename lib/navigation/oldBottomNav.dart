@@ -51,9 +51,9 @@ class YellowBottomNav extends StatelessWidget {
           ),
           IconButton(
             enableFeedback: false,
-            onPressed: () => context.go('/BulletinBoard'),
+            onPressed: () => context.go('/News'),
             icon:
-            currentLocation == '/BulletinBoard'
+            currentLocation == '/News'
                 ? const Icon(
               Icons.calendar_month,
               color: Colors.white,

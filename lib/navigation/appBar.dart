@@ -11,7 +11,7 @@ class YellowAppBar extends StatelessWidget implements PreferredSizeWidget {
           body: AppBar(
         leading: CircleAvatar(
           radius: 25,
-          //backgroundImage: AssetImage('assets/school_logo.png'),
+          backgroundImage: AssetImage('images/school_logo.png'),
           backgroundColor: Colors.white,
         ),
         centerTitle: true,

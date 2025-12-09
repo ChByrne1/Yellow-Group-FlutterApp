@@ -4,66 +4,71 @@ description: "Flutter App Project for Yellow Group"
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-
 version: 1.0.0+1
 
 environment:
   sdk: ^3.8.0
 
-
 dependencies:
   flutter:
     sdk: flutter
+  hive_ce: ^2.6.0
+  hive_ce_flutter: ^2.1.0
+  path_provider: ^2.1.0
+  # HTTP & API
+  chopper: ^8.2.0
+  http: ^1.2.2
+  json_annotation: ^4.9.0
 
+  # Navigation
   go_router: ^13.0.0
-  chopper: ^6.1.4
-  http: ^1.1.0
-  cupertino_icons: ^1.0.8
+
+  # Code generation annotations
   freezed_annotation: ^2.4.1
-  analyzer: ^5.4.0
 
-
-
-
+  # UI
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  json_serializable: ^6.7.1
-  build_runner: ^2.3.3
-  chopper_generator: ^6.0.3
-  freezed: ^2.4.1
-  flutter_lints: ^5.0.0
-  http: ^1.2.2
+  # Code generation tools
+  build_runner: ^2.4.0
+  chopper_generator: ^8.2.0
+  freezed: ^2.5.7
+  hive_ce_generator: ^1.6.0
+  json_serializable: ^6.8.0
 
+  # Linting
+  flutter_lints: ^5.0.0
 
 flutter:
-
-
   uses-material-design: true
 
   assets:
     - images/empty.jpg
     - images/homePageBackground.jpg
-#    - images/school_logo.png
+    - images/school_logo.png
 
+  fonts:
+    - family: Merriweather
+      fonts:
+        - asset: fonts/Merriweather_24pt-Bold.ttf
+          weight: 700
+        - asset: fonts/Merriweather_24pt-SemiBold.ttf
+          weight: 600
+        - asset: fonts/Merriweather_24pt-Light.ttf
+          weight: 300
+        - asset: fonts/Merriweather_24pt-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: fonts/Merriweather_24pt-Italic.ttf
+          style: italic
+        - asset: fonts/Merriweather_24pt-ExtraBold.ttf
+          weight: 800
 
-fonts:
-  - family: Merriweather
-    fonts:
-      - asset: fonts/Merriweather_24pt-Bold.ttf
-      - asset: fonts/Merriweather_24pt-SemiBold.ttf
-      - asset: fonts/Merriweather_24pt-Light.ttf
-      - asset: fonts/Merriweather_24pt-SemiBoldItalic.ttf
-      - asset: fonts/Merriweather_24pt-Italic.ttf
-        weight: 600
-      - asset: fonts/Merriweather_24pt-ExtraBold.ttf
-        weight: 800
-
-  - family: AverageSans
-    fonts:
-      -asset: fonts/AverageSans-Regular.ttf
-      weight: 200
-
-
+    - family: AverageSans
+      fonts:
+        - asset: fonts/AverageSans-Regular.ttf
+          weight: 400
