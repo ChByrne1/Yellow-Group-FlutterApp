@@ -31,7 +31,7 @@ class ApiClient {
       [
         ApiKeyInterceptor(_apiKeyProvider),
         HttpLoggingInterceptor(),
-        if (_oAuthChopper != null) _oAuthChopper!.interceptor(),
+        if (_oAuthChopper != null) _oAuthChopper.interceptor(),
       ]
   );
 

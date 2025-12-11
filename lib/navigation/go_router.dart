@@ -1,6 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:yellow_group_flutterapp/pages/about_us.dart';
-import '../main.dart';
+import '../pages/cafeteria.dart';
 import '../network/overview.dart';
 import '../pages/overview.dart';
 
@@ -51,13 +50,10 @@ final GoRouter routes = GoRouter(
       GoRoute(path: '/News',
           builder: (context, state) => NewsPage()
       ),
-/*
       GoRoute(path: '/Cafeteria',
-          builder: (context, state) =>CafeteriaPage(),
+          builder: (context, state) => CafeteriaPage(),
           name: 'Cafeteria'
       ),
-      */
-
       GoRoute(path: '/AboutUs',
           builder: (context, state) =>AboutUsPage(),
           name: 'AboutUs'
@@ -71,6 +67,11 @@ final GoRouter routes = GoRouter(
         path: '/splash',
         builder: (context, state) => const SplashScreen(),
       ),
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => const SplashScreen(),
+      ),
+
 
 
 

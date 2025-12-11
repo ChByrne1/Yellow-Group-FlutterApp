@@ -1,6 +1,5 @@
 import 'package:hive_ce/hive.dart';
 import '../models/cafeteria_item.dart';
-import '../network/overview.dart';
 
 class CafeteriaRepository {
   late Box<CafeteriaItem> _cafeteriaBox;

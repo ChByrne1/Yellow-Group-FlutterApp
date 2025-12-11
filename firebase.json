@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "fcm4flutter-a436f",
+          "appId": "1:110904054210:android:e9aab00c436b99bb27465b",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "fcm4flutter-a436f",
+          "configurations": {
+            "android": "1:110904054210:android:e9aab00c436b99bb27465b",
+            "web": "1:110904054210:web:3f8239278728ada227465b"
+          }
+        }
+      }
+    }
+  }
+}

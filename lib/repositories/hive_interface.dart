@@ -93,7 +93,7 @@ abstract class HiveBoxInterface<T> {
 
     _box = await Hive.openBox<String>(
       boxName,
-      encryptionCipher: HiveAesCipher(key as Uint8List),
+      encryptionCipher: HiveAesCipher(key),
     );
   }
 

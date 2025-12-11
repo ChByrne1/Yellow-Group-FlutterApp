@@ -14,6 +14,7 @@ Future<void> main() async {
   await Hive.initFlutter();
 
   await initHive();
+  await authService.initialize();
   runApp(const MyApp());
 }
 

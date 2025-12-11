@@ -48,7 +48,7 @@ Future<List<AnnoucementCall>> fetchAnnoucements() async {
     List<AnnoucementCall> items =
         jsonList!
             .map(
-              (json) => AnnoucementCall.fromJson(json as Map<String, dynamic>),
+              (json) => AnnoucementCall.fromJson(json),
             )
             .toList();
     return items;

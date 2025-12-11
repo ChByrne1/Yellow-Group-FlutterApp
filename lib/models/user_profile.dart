@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../network/overview.dart';
-import '../network/overview.dart';
 
 part 'user_profile.freezed.dart';
 part 'user_profile.g.dart';
