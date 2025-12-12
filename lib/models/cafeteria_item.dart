@@ -31,7 +31,7 @@ Future<List<CafeteriaItem>> fetchCafeteriaItems() async {
   if (response.isSuccessful && response.body != null) {
     List<Map<String, dynamic>>? jsonList = response.body;
     List<CafeteriaItem> items = jsonList!
-        .map((json) => CafeteriaItem.fromJson(json as Map<String, dynamic>))
+        .map((json) => CafeteriaItem.fromJson(json))
         .toList();
     return items;
   } else {

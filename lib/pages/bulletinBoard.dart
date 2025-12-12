@@ -177,7 +177,7 @@ class _BulletinBoardPageState extends State<BulletinBoardPage> {
                       child: Text(item['content']),
                     ),
                     const Divider(),
-                    ButtonBar(
+                    OverflowBar(
                       alignment: MainAxisAlignment.end,
                       children: [
                         TextButton.icon(

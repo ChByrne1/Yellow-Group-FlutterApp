@@ -1,6 +1,5 @@
 import 'package:chopper/chopper.dart';
 import '../models/overview.dart';
-import 'overview.dart';
 part 'service_interface.chopper.dart';
 
 

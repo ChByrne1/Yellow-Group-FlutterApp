@@ -1,11 +1,81 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Theme/theme.dart';
 import 'navigation/overview.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:rxdart/rxdart.dart';
 
+// used to pass messages from event handler to the UI
+final _messageStreamController = BehaviorSubject<RemoteMessage>();
 
-void main() {
-  runApp(const MyApp());
+//background message handling
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+
+  if (kDebugMode) {
+    print("Handling a background message: ${message.messageId}");
+    print('Message data: ${message.data}');
+    print('Message notification: ${message.notification?.title}');
+    print('Message notification: ${message.notification?.body}');
+  }
 }
+
+
+Future<void> main() async {
+  //initialize firebase and notifications system
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // request permission to display notifications
+  final messaging = FirebaseMessaging.instance;
+
+  final settings = await messaging.requestPermission(
+    alert: true,
+    announcement: false,
+    badge: true,
+    carPlay: false,
+    criticalAlert: false,
+    provisional: false,
+    sound: true,
+  );
+
+  if (kDebugMode) {
+    print('Permission granted: ${settings.authorizationStatus}');
+  }
+
+  //requests a registration token for sending messages to users from api server.
+  String? token = await messaging.getToken();
+
+  if (kDebugMode) {
+    print('Registration Token=$token');
+  }
+
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    if (kDebugMode) {
+      print('Handling a foreground message: ${message.messageId}');
+      print('Message data: ${message.data}');
+      print('Message notification: ${message.notification?.title}');
+      print('Message notification: ${message.notification?.body}');
+    }
+
+    _messageStreamController.sink.add(message);
+  });
+
+  //background message redirect
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  runApp(MyApp());
+
+  // subscribe to a topic.
+  const topic = 'app_promotion';
+  await messaging.subscribeToTopic(topic);
+
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,9 +103,25 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  @override
+  String _lastMessage = "";
+
+  _HomePageState() {
+    _messageStreamController.listen((message) {
+      setState(() {
+        if (message.notification != null) {
+          _lastMessage = 'Received a notification message:'
+              '\nTitle=${message.notification?.title},'
+              '\nBody=${message.notification?.body},'
+              '\nData=${message.data}';
+        } else {
+          _lastMessage = 'Received a data message: ${message.data}';
+        }
+      });
+    });
+  }
+
+    @override
   Widget build(BuildContext context) {
-    news.sort((a, b) => a.DatePublished!.millisecondsSinceEpoch.compareTo(b.DatePublished!.millisecondsSinceEpoch));
     final pageSetup = SchoolTheme.pageSetup();
     return Container(
         color: pageSetup.appBarTheme.backgroundColor,
@@ -61,12 +147,11 @@ class _HomePageState extends State<HomePage> {
                     itemCount: 3,
                     shrinkWrap: true,
                     itemBuilder:  (context, index) {
-                      var newsItem = news[index];
                       return ExpansionTile(
-                        title: Text(newsItem.Headline!),
-                        subtitle: Text('Written by ${newsItem.Author}, Pub. ${newsItem.DatePublished!.year}/${newsItem.DatePublished!.month}/${newsItem.DatePublished!.day}'),
+                        title: Text(''),
+                        subtitle: Text('Written by , Pub. /'),
                         children: [
-                          Text('${newsItem.Content!.substring(0, 32)}...'),
+                          Text(''),
                         ],
                       );
                     }
@@ -76,14 +161,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             bottomNavigationBar: YellowBottomNav(),
-            endDrawer: YellowDrawerNav(),
+            drawer: YellowDrawerNav(),
           ),
         )
     );
   }
-
-  //I just need to plug a functioning service in here and this page is more-or-less done
-  var service = MockNewsService();
-  var news = MockNewsService.getNews();
-
 }

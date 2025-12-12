@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../network/overview.dart';
-import 'overview.dart';
 
 
 part 'annoucement_model.g.dart';
@@ -30,7 +29,7 @@ Future<List<Annoucement>> fetchAnnoucements() async {
   if (response.isSuccessful && response.body != null) {
     List<Map<String, dynamic>>? jsonList = response.body;
     List<Annoucement> items = jsonList!
-        .map((json) => Annoucement.fromJson(json as Map<String, dynamic>))
+        .map((json) => Annoucement.fromJson(json))
         .toList();
     return items;
   } else {

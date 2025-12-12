@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:yellow_group_flutterapp/cardNsets/testSets/testCard.dart';
-import 'package:yellow_group_flutterapp/models/cafeteria_item.dart';
 import '../../models/overview.dart';
 
 class EventList extends StatelessWidget {

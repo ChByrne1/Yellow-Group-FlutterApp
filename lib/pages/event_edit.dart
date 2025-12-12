@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/overview.dart';        // EventEdit
-import '../../models/campus_model.dart';   // Campus, fetchCampuses
+// Campus, fetchCampuses
 import '../network/overview.dart';         // ApiClient, apiUrl
 
 class EditEventPage extends StatefulWidget {
@@ -193,7 +193,7 @@ class _EditEventPageState extends State<EditEventPage> {
                 decoration: const InputDecoration(labelText: 'Location'),
               ),
               DropdownButtonFormField<Campus>(
-                value: _selectedCampus,
+                initialValue: _selectedCampus,
                 items: _campuses
                     .map(
                       (c) => DropdownMenuItem(

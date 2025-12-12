@@ -32,7 +32,7 @@ Future<List<School>> fetchSchools() async {
   if (response.isSuccessful && response.body != null) {
     List<Map<String, dynamic>>? jsonList = response.body;
     List<School> items = jsonList!
-        .map((json) => School.fromJson(json as Map<String, dynamic>))
+        .map((json) => School.fromJson(json))
         .toList();
     return items;
   } else {
