@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
                       const SizedBox(height: 40),
 
-                      // ===== News Section =====
+
                       Text(
                         'Latest News',
                         style: pageSetup.textTheme.headlineSmall?.copyWith(

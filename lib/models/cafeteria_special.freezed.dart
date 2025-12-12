@@ -122,11 +122,11 @@ class __$$CafeteriaSpecialImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CafeteriaSpecialImpl implements _CafeteriaSpecial {
+class _$CafeteriaSpecialImpl extends _CafeteriaSpecial {
   const _$CafeteriaSpecialImpl({
     required this.dayOfTheWeek,
     required this.imagePath,
-  });
+  }) : super._();
 
   factory _$CafeteriaSpecialImpl.fromJson(Map<String, dynamic> json) =>
       _$$CafeteriaSpecialImplFromJson(json);
@@ -173,11 +173,12 @@ class _$CafeteriaSpecialImpl implements _CafeteriaSpecial {
   }
 }
 
-abstract class _CafeteriaSpecial implements CafeteriaSpecial {
+abstract class _CafeteriaSpecial extends CafeteriaSpecial {
   const factory _CafeteriaSpecial({
     required final DayOfWeek dayOfTheWeek,
     required final String imagePath,
   }) = _$CafeteriaSpecialImpl;
+  const _CafeteriaSpecial._() : super._();
 
   factory _CafeteriaSpecial.fromJson(Map<String, dynamic> json) =
       _$CafeteriaSpecialImpl.fromJson;

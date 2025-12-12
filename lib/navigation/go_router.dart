@@ -6,6 +6,7 @@ import '../pages/overview.dart';
 final AuthService _authService = AuthService();
 
 final GoRouter routes = GoRouter(
+  /*
     initialLocation: '/splash',
 
     redirect: (context, state) {
@@ -39,7 +40,7 @@ final GoRouter routes = GoRouter(
       // No redirect needed
       return null;
     },
-
+*/
     /// Refresh the router when auth state changes
     refreshListenable: _authService,
     routes: [

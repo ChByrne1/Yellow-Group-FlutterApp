@@ -63,6 +63,7 @@ flutter:
     - images/empty.jpg
     - images/homePageBackground.jpg
     - images/school_logo.png
+    - images/Thursday.jpg
 
 
 fonts:

@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../repositories/overview.dart';
 import 'apiclient_provider.dart';
 
+
+/*
 /// Repo DI
 final schoolRepoProvider = Provider<SchoolRepo>((ref) => SchoolRepo());
 
@@ -85,3 +87,4 @@ final refreshSchoolsProvider = FutureProvider.autoDispose<void>((ref) async {
     // optionally rethrow or handle
   }
 });
+*/

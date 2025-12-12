@@ -5,7 +5,7 @@ class CafeteriaRepository {
   late Box<CafeteriaItem> _cafeteriaBox;
 
   CafeteriaRepository() {
-    _cafeteriaBox = Hive.box<CafeteriaItem>('Cafeteria');
+    _cafeteriaBox = Hive.box<CafeteriaItem>('Cafeterias');
   }
 
   Stream<BoxEvent> watchCafeteria() => _cafeteriaBox.watch();
@@ -60,3 +60,5 @@ class CafeteriaRepository {
 
   Future<void> clearAll() async => _cafeteriaBox.clear();
 }
+
+

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../network/overview.dart';
 
-class LoginPage extends StatefulWidget {
+/**
+class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  ConsumerState<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends ConsumerState<LoginPage> {
   final AuthService _authService = AuthService();
   bool _isLoading = false;
 
@@ -19,13 +21,11 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      final success = await _authService.signIn();
+      final success = await ref.read(authServiceProvider).signIn();
 
       if (success && mounted) {
-        // Navigation will be handled by GoRouter redirect
         context.go('/');
       } else if (mounted) {
-        // Show error message
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Login failed. Please try again.'),
@@ -240,3 +240,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+    */

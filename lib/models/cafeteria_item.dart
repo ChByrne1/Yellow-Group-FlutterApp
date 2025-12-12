@@ -42,13 +42,10 @@ Future<List<CafeteriaItem>> fetchCafeteriaItems() async {
   final response = await apiClient.school.callAll("Cafeteria");
 
   if (response.isSuccessful && response.body != null) {
-    List<Map<String, dynamic>>? jsonList = response.body;
-    List<CafeteriaItem> items =
-        jsonList!
-            .map((json) => CafeteriaItem.fromJson(json))
-            .toList();
-    return items;
-  } else {
-    return [];
+    final jsonList = response.body as List<dynamic>;
+    return jsonList
+        .map((json) => CafeteriaItem.fromJson(json as Map<String, dynamic>))
+        .toList();
   }
+  return [];
 }
